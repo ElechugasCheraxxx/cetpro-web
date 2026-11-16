@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "required": ["items"],
+  "additionalProperties": true,
+  "properties": {
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["source", "validated", "validated_by", "validated_at", "nombre_oficial"],
+        "additionalProperties": true,
+        "properties": {
+          "nombre_oficial": { "type": "string", "minLength": 1 },
+          "source": { "type": "string", "minLength": 1 },
+          "validated": { "type": "boolean" },
+          "validated_by": { "type": "string", "minLength": 1 },
+          "validated_at": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

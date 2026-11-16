@@ -1,0 +1,33 @@
+---
+layout: base.njk
+title: Admisión y matrícula
+description: Admisión al CETPRO San Luis — sin examen, gratuita; desde los 14 años. Requisitos generales y cómo inscribirse.
+---
+<article class="wrap">
+  <h1>Admisión y matrícula</h1>
+  <p class="lead">Sin examen de admisión y con formación gratuita. Desde los 14 años en adelante (no hay límite de edad).</p>
+
+  <h2>Requisitos</h2>
+  <ul class="list-check">
+    {% for r in admision.items[0].requisitos %}<li>{{ r }}</li>{% endfor %}
+  </ul>
+
+  <h2>¿Qué documentos llevar?</h2>
+  <ul class="list-check">
+    {% for d in admision.items[0].documentos %}<li>{{ d }}</li>{% endfor %}
+  </ul>
+
+  <h2>¿Cómo inscribirme?</h2>
+  <ol>
+    {% for p in admision.items[0].pasos %}<li>{{ p }}</li>{% endfor %}
+  </ol>
+
+  <h2>¿Cuánto cuesta?</h2>
+  <p>{{ admision.items[0].costo }}</p>
+
+  <div class="notice">
+    <p><strong>Fechas de admisión 2026-2027:</strong> no publicadas de forma oficial. Este sitio no muestra fechas de matrícula sin fuente institucional validada; para confirmarlas, comunícate al <a href="tel:+5113233342">+51 1 323-3342</a> o escribe a <a href="mailto:cetprosanluis@gmail.com">cetprosanluis@gmail.com</a>.</p>
+  </div>
+
+  <p class="card-caption">Fuente: {{ admision.items[0].source }} · Última verificación: 2026-11-15.</p>
+</article>

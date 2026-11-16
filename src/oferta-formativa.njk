@@ -1,0 +1,36 @@
+---
+layout: base.njk
+title: Oferta formativa
+description: 6 carreras técnicas (2 años) y 6 programas de auxiliar técnico (1 año) del CETPRO San Luis — fuentes públicas (Agencia Andina, UGEL 07).
+---
+
+<article class="wrap">
+  <h1>Oferta formativa</h1>
+  <div class="notice">
+    <p><strong>Fuente de los datos:</strong> Agencia Andina (08/12/2025, citando a la directora del CETPRO) y UGEL 07 (30/04/2026). Esta información es pública y difundida oficialmente, pero este sitio es informativo y académico: los nombres vigentes de los programas se confirman con la institución. No publicamos perfiles, capacidades ni módulos sin fuente oficial documentada.</p>
+  </div>
+
+  <h2>Carreras técnicas <span class="small muted">(duración: 2 años)</span></h2>
+  <div class="cards">
+    {% for a in areas.items | filterBy('nivel', 'carrera-tecnica') %}
+    <article class="card">
+      <h3>{{ a.nombre }}</h3>
+      <p class="muted small">{{ a.duracion }} · Títulos a nombre de la Nación</p>
+      <p><a href="/oferta-formativa/{{ a.id }}/">Ver ficha →</a></p>
+    </article>
+    {% endfor %}
+  </div>
+
+  <h2>Programas de auxiliar técnico <span class="small muted">(duración: 1 año)</span></h2>
+  <div class="cards">
+    {% for a in areas.items | filterBy('nivel', 'auxiliar-tecnico') %}
+    <article class="card">
+      <h3>{{ a.nombre }}</h3>
+      <p class="muted small">{{ a.duracion }} · Certificado modular de auxiliar técnico</p>
+      <p><a href="/oferta-formativa/{{ a.id }}/">Ver ficha →</a></p>
+    </article>
+    {% endfor %}
+  </div>
+
+  <p class="card-caption">Programas más solicitados según fuentes públicas: Estilismo, Panificación Industrial, Cocina, Computación (carrera solicitada por los postulantes, mencionada en prensa; su ubicación curricular se confirma con la institución) y Estampado de Prendas.</p>
+</article>

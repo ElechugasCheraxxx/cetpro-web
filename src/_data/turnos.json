@@ -1,0 +1,7 @@
+{
+  "items": [
+    { "id": "manana", "nombre": "Mañana", "inicio": null, "fin": null, "notas": "Horario exacto por programa: no publicado de forma oficial", "source": "Agencia Andina 08/12/2025", "validated": true, "validated_by": "equipo-fuente-publica", "validated_at": "2026-11-15" },
+    { "id": "tarde", "nombre": "Tarde", "inicio": null, "fin": null, "notas": "Horario exacto por programa: no publicado de forma oficial", "source": "Agencia Andina 08/12/2025", "validated": true, "validated_by": "equipo-fuente-publica", "validated_at": "2026-11-15" },
+    { "id": "noche", "nombre": "Noche", "inicio": null, "fin": null, "notas": "Horario exacto por programa: no publicado de forma oficial", "source": "Agencia Andina 08/12/2025", "validated": true, "validated_by": "equipo-fuente-publica", "validated_at": "2026-11-15" }
+  ]
+}

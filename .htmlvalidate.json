@@ -1,0 +1,13 @@
+{
+  "extends": ["html-validate:recommended"],
+  "rules": {
+    "no-trailing-whitespace": "off",
+    "element-permitted-content": "error",
+    "no-dup-id": "error",
+    "attr-quotes": "error",
+    "deprecated": "error",
+    "void-style": ["error", { "style": "omit" }],
+    "tel-non-breaking": "off",
+    "require-sri": "off"
+  }
+}

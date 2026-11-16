@@ -1,0 +1,23 @@
+---
+layout: base.njk
+title: Servicios
+description: Servicios del CETPRO San Luis — certificación modular, bolsa de trabajo, talleres de emprendimiento y servicios a la comunidad.
+---
+<article class="wrap">
+  <h1>Servicios</h1>
+  <p class="lead">El CETPRO San Luis ofrece formación técnica y servicios abiertos a estudiantes, egresados y la comunidad.</p>
+
+  <div class="cards">
+    {% for s in servicios.items %}
+    <article class="card" id="{{ s.id }}">
+      <h2>{{ s.nombre }}</h2>
+      <p>{{ s.descripcion }}</p>
+      <p><strong>¿Cómo acceder?</strong> {{ s.como_acceder }}</p>
+      <p><strong>Contacto:</strong> {{ s.contacto }}</p>
+      <p class="card-caption">Fuente: {{ s.source }}</p>
+    </article>
+    {% endfor %}
+  </div>
+
+  <p class="card-caption">Algunos servicios aún no tienen confirmación institucional pública en este sitio; consulta siempre a la Dirección del CETPRO por teléfono 323-3342 o por correo.</p>
+</article>

@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "nombre_oficial": "Centro de Educación Técnico-Productiva San Luis",
+      "nombre_corto": "CETPRO San Luis",
+      "categoria": "Centro de educación técnico-productiva (CETPRO) de gestión pública",
+      "direccion": "Jr. Cabo Yen Escobedo Garro N.° 381, Urb. La Viña",
+      "distrito": "San Luis",
+      "ciudad": "Lima",
+      "pais": "Perú",
+      "cruce": "Cruce de Av. Del Aire y Av. Rosa Toro",
+      "telefonos": ["+51 1 323-3342"],
+      "correo": "cetprosanluis@gmail.com",
+      "ugel": "UGEL 07 — DRE Lima Metropolitana (DRELM)",
+      "trayectoria_aprox": "~60 años",
+      "estudiantes_anio_aprox": "~1,500",
+      "participacion_mujeres_aprox": "60%",
+      "estudiantes_con_discapacidad_aprox": "15 (3%)",
+      "facebook": "https://www.facebook.com/cetprosnluis",
+      "instagram": "https://www.instagram.com/cetprosanluis",
+      "mision": null,
+      "vision": null,
+      "historia": null,
+      "source": "DRELM Directorio CETPRO 2026; UGEL 07 noticias 2026; Agencia Andina 08/12/2025 y 29/04/2026; Facebook e Instagram oficiales (fetch 15/11/2026)",
+      "validated": true,
+      "validated_by": "equipo-fuente-publica",
+      "validated_at": "2026-11-15",
+      "nota": "Datos públicos citados (research.md). No son pronunciamiento institucional oficial. Misión/visión/historia omitidas (sin fuente)."
+    }
+  ]
+}

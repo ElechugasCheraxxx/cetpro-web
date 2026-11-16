@@ -1,0 +1,17 @@
+{
+  "items": [
+    { "id": "panificacion-industrial", "nombre": "Panificación Industrial", "nivel": "carrera-tecnica", "duracion": "2 años", "source": "Agencia Andina 08/12/2025", "validated": true, "validated_by": "equipo-fuente-publica", "validated_at": "2026-11-15" },
+    { "id": "cocina", "nombre": "Cocina", "nivel": "carrera-tecnica", "duracion": "2 años", "source": "Agencia Andina 08/12/2025", "validated": true, "validated_by": "equipo-fuente-publica", "validated_at": "2026-11-15" },
+    { "id": "estilismo", "nombre": "Estilismo", "nivel": "carrera-tecnica", "duracion": "2 años", "source": "Agencia Andina 08/12/2025", "validated": true, "validated_by": "equipo-fuente-publica", "validated_at": "2026-11-15" },
+    { "id": "redes-y-comunicaciones", "nombre": "Redes y Comunicaciones", "nivel": "carrera-tecnica", "duracion": "2 años", "source": "Agencia Andina 08/12/2025; UGEL 07 30/04/2026", "validated": true, "validated_by": "equipo-fuente-publica", "validated_at": "2026-11-15" },
+    { "id": "fabricacion-de-prendas-de-vestir", "nombre": "Fabricación de Prendas de Vestir", "nivel": "carrera-tecnica", "duracion": "2 años", "source": "Agencia Andina 08/12/2025; UGEL 07 30/04/2026", "validated": true, "validated_by": "equipo-fuente-publica", "validated_at": "2026-11-15" },
+    { "id": "patronaje", "nombre": "Patronaje", "nivel": "carrera-tecnica", "duracion": "2 años", "source": "Agencia Andina 08/12/2025", "validated": true, "validated_by": "equipo-fuente-publica", "validated_at": "2026-11-15" },
+    { "id": "produccion-audiovisual", "nombre": "Producción Audiovisual", "nivel": "auxiliar-tecnico", "duracion": "1 año", "source": "Agencia Andina 08/12/2025", "validated": true, "validated_by": "equipo-fuente-publica", "validated_at": "2026-11-15" },
+    { "id": "estampado-de-prendas", "nombre": "Estampado de Prendas", "nivel": "auxiliar-tecnico", "duracion": "1 año", "source": "Agencia Andina 08/12/2025", "validated": true, "validated_by": "equipo-fuente-publica", "validated_at": "2026-11-15" },
+    { "id": "apoyo-administrativo", "nombre": "Apoyo Administrativo", "nivel": "auxiliar-tecnico", "duracion": "1 año", "source": "Agencia Andina 08/12/2025; UGEL 07 30/04/2026", "validated": true, "validated_by": "equipo-fuente-publica", "validated_at": "2026-11-15" },
+    { "id": "asistencia-en-contabilidad", "nombre": "Asistencia en Contabilidad", "nivel": "auxiliar-tecnico", "duracion": "1 año", "source": "Agencia Andina 08/12/2025", "validated": true, "validated_by": "equipo-fuente-publica", "validated_at": "2026-11-15" },
+    { "id": "cuidado-del-adulto-mayor-nino-y-adolescente", "nombre": "Cuidado del Adulto Mayor, Niño y Adolescente", "nivel": "auxiliar-tecnico", "duracion": "1 año", "source": "Agencia Andina 08/12/2025", "validated": true, "validated_by": "equipo-fuente-publica", "validated_at": "2026-11-15" },
+    { "id": "decoracion-de-eventos", "nombre": "Decoración de Eventos", "nivel": "auxiliar-tecnico", "duracion": "1 año", "source": "Agencia Andina 08/12/2025", "validated": true, "validated_by": "equipo-fuente-publica", "validated_at": "2026-11-15" }
+  ],
+  "_nota": "Oferta formativa según fuentes públicas (Andina 08/12/2025; UGEL 07 30/04/2026). Diferente de los supuestos de los documentos del proyecto («5 áreas»). Marcada fuente-pública · NO oficial. No se listan módulos, perfiles ni capacidades por falta de fuente; publicarlo exigiría documentos oficiales de la institución."
+}

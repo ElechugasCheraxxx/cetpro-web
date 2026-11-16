@@ -1,0 +1,27 @@
+{
+  "name": "cetpro-san-luis-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Sitio web institucional del CETPRO San Luis. Estático, sin recolección de datos. Fuente única; dos destinos: Cloudflare Pages (principal) y espejo IIS/Tunnel (respaldo).",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "clean": "rm -rf dist",
+    "test": "node --test tests/",
+    "check:data": "node scripts/check-data.mjs",
+    "check:html": "html-validate \"dist/**/*.html\"",
+    "check:links": "linkinator http://localhost:8080 --recurse --concurrency 10 --skip \".*\\.(avif|webp|jpe?g|png|svg|ico)$\"",
+    "serve": "npx serve dist -l 8080",
+    "prebuild": "npm run check:data",
+    "postbuild": "node scripts/make-version.mjs"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8",
+    "ajv": "^8.20.0",
+    "html-validate": "^11.21.1",
+    "linkinator": "^8.1.0"
+  }
+}

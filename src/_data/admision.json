@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "requisitos": [
+        "Haber culminado la educación primaria",
+        "Edad mínima: 14 años",
+        "Documentos básicos requeridos por cada programa (DNI y certificados, según corresponda)"
+      ],
+      "documentos": ["DNI", "Certificado de estudios (primaria o secundaria, según programa)", "Fotografía tamaño carnet (según programa)"],
+      "fechas": [],
+      "pasos": [
+        "Consulta la oferta de carreras técnicas y programas de auxiliar técnico",
+        "Comunícate con el CETPRO (teléfono 323-3342 o correo cetprosanluis@gmail.com) para confirmar convocatoria, cupos y horario por programa",
+        "Presenta los documentos en la Dirección del CETPRO"
+      ],
+      "costo": "Gratuito (formación técnico-productiva pública). Sin examen de admisión.",
+      "notas": "Fechas de matrícula no publicadas de forma oficial a la fecha de redacción. El sitio declara únicamente requisitos y condiciones generales; no se publican fechas sin fuente institucional oficial.",
+      "source": "Agencia Andina 29/04/2026 y 08/12/2025 (criterios generales de los CETPRO públicos)",
+      "validated": true,
+      "validated_by": "equipo-fuente-publica",
+      "validated_at": "2026-11-15"
+    }
+  ]
+}

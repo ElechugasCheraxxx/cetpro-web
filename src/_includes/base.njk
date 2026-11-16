@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} | CETPRO San Luis</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  {% if jsonLd %}<script type="application/ld+json">{{ jsonLd | safe }}</script>{% endif %}
+  <meta property="og:title" content="{{ title }} | CETPRO San Luis">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/" aria-label="CETPRO San Luis — inicio">
+        <svg viewBox="0 0 32 32" width="36" height="36" aria-hidden="true" focusable="false">
+          <rect width="32" height="32" rx="6" fill="#0b3d6e"/>
+          <path d="M7 13 L16 7 L25 13" fill="none" stroke="#f4c20d" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="M9 14 V22 M23 14 V22" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 19 L16 21.5 L20 19" fill="none" stroke="#f4c20d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-text"><strong>CETPRO San Luis</strong><small>Formación técnica pública · Ingresa gratis</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir/cerrar menú">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <nav id="nav" class="site-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="/"{% if page.url == '/' %} aria-current="page"{% endif %}>Inicio</a></li>
+          <li><a href="/nosotros/"{% if page.url == '/nosotros/' %} aria-current="page"{% endif %}>Nosotros</a></li>
+          <li><a href="/oferta-formativa/"{% if page.url | hasPrefix('/oferta-formativa/') %} aria-current="page"{% endif %}>Oferta formativa</a></li>
+          <li><a href="/turnos-y-horarios/"{% if page.url == '/turnos-y-horarios/' %} aria-current="page"{% endif %}>Turnos y horarios</a></li>
+          <li><a href="/admision/"{% if page.url == '/admision/' %} aria-current="page"{% endif %}>Admisión</a></li>
+          <li><a href="/servicios/"{% if page.url == '/servicios/' %} aria-current="page"{% endif %}>Servicios</a></li>
+          <li><a href="/contacto/"{% if page.url == '/contacto/' %} aria-current="page"{% endif %}>Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido">
+    {{ content | safe }}
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-title">CETPRO San Luis</p>
+        <address>
+          Jr. Cabo Yen Escobedo Garro N.° 381<br>
+          Urb. La Viña, distrito de San Luis, Lima<br>
+          Teléfono: <a href="tel:+5113233342">+51 1 323-3342</a><br>
+          Correo: <a href="mailto:cetprosanluis@gmail.com">cetprosanluis@gmail.com</a>
+        </address>
+      </div>
+      <div>
+        <p class="footer-title">Enlaces</p>
+        <ul class="footer-links">
+          <li><a href="/oferta-formativa/">Oferta formativa</a></li>
+          <li><a href="/admision/">Admisión</a></li>
+          <li><a href="/privacidad/">Aviso de privacidad</a></li>
+          <li><a href="/accesibilidad/">Accesibilidad</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-title">Fuente de datos</p>
+        <p class="small">Contenidos tomados de <strong>fuentes públicas</strong> y marcados como tales. No constituyen pronunciamiento oficial de la institución hasta su validación institucional. Ver <a href="/privacidad/">aviso de privacidad</a>.</p>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p class="small">© 2026 CETPRO San Luis · Sitio informativo de la institución (fuente pública)</p>
+    </div>
+  </footer>
+  <script src="/assets/js/nav.js" defer></script>
+</body>
+</html>
