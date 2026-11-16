@@ -1,9 +1,11 @@
 /* CETPRO San Luis — Sistema "Plano de taller" (v3).
    Manual técnico de un CETPRO público: papel cálido, tinta, verde profundo,
-   naranja de señal y franja hazard. Sin degradados, sin sombras suaves:
-   filetes duros, marcos de tinta, desfaces de imprenta. WCAG 2.1 AA.
-   Tipografías auto-hospedadas: Anton (display), Atkinson Hyperlegible (texto),
-   IBM Plex Mono (anotaciones/índices). */
+   amarillo engranaje y fucsia del logotipo oficial (CMY). Sin degradados,
+   sin sombras suaves: filetes duros, marcos de tinta, desfaces de imprenta.
+   WCAG 2.1 AA. Tipografías auto-hospedadas: Anton (display), Atkinson
+   Hyperlegible (texto), IBM Plex Mono (anotaciones/índices). */
+   Paleta muestreada del logotipo oficial entregado por el equipo
+   (insignia circular FB oficial, 16/11/2026). */
 
 @font-face {
   font-family: 'Anton';
@@ -78,12 +80,13 @@
   /* color — plano de taller (todos verificados ≥ 4.5:1 en cuerpo; AA) */
   --paper: #ECEEE7;            /* papel de plano: gris verdoso frío */
   --surface: #FDFCF6;          /* ficha sobre papel */
-  --ink: #16150F;              /* tinta cálida (casi negro) */
-  --deep: #0E3B2C;             /* verde profundo (planchas oscuras) */
-  --deep-ink: #0A2A20;         /* verde más profundo */
-  --rust: #9A3412;             /* enlaces sobre papel */
-  --orange: #C2410C;           /* señal / acentos / etiquetas */
-  --hazard: #F2C230;           /* franja de seguridad / sello */
+  --ink: #13140F;              /* tinta (wordmark del logotipo) */
+  --deep: #1C2F57;             /* azul lema del logotipo (planchas oscuras) */
+  --deep-ink: #131F36;         /* azul profundo (drawer móvil) */
+  --rust: #1C2F57;             /* enlaces/índices sobre papel (azul logo) */
+  --orange: #B42C9B;           /* fucsia del logotipo (acentos secundarios) */
+  --hazard: #FAD441;           /* amarillo engranaje */
+  --hazard-hot: #FFE066;       /* amarillo hover */
   --muted: #57534A;            /* texto secundario sobre papel */
   --line: #16150F;             /* filetes de tinta */
   --line-soft: #D3D6CB;        /* filetes suaves */
@@ -130,8 +133,8 @@ body {
 }
 .skip-link:focus { left: 0; }
 
-/* enlaces: óxido subrayado sobre papel; hazard sobre plancha oscura */
-a { color: var(--rust); text-decoration: underline; text-decoration-color: #E4B49B; text-decoration-thickness: 2px; text-underline-offset: 3px; text-decoration-skip-ink: none; }
+/* enlaces: azul logotipo subrayado con cian (decoración); hazard sobre azul */
+a { color: var(--rust); text-decoration: underline; text-decoration-color: #A8DEF2; text-decoration-thickness: 2px; text-underline-offset: 3px; text-decoration-skip-ink: none; }
 a:hover { color: var(--orange); text-decoration-color: var(--orange); }
 a:focus-visible, button:focus-visible, summary:focus-visible {
   outline: 3px solid var(--ink); outline-offset: 2px; border-radius: 1px;
@@ -139,11 +142,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 ::selection { background: var(--hazard); color: var(--ink); }
 
 /* ==========================================================================
-   HEADER — plancha de tinta con friso hazard
+   HEADER — plancha azul logotipo con friso hazard
    ========================================================================== */
 .site-header {
   position: sticky; top: 0; z-index: 100;
-  background: var(--ink); color: var(--paper);
+  background: var(--deep); color: var(--paper);
   border-bottom: 4px solid var(--hazard);
   padding-top: env(safe-area-inset-top);
 }
@@ -156,7 +159,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   font-size: 1.12rem; line-height: 1.1; letter-spacing: .04em; text-transform: uppercase; color: var(--paper);
 }
 .brand-text small { display: block; font-size: .72rem; color: #D6D0C0; letter-spacing: .04em; font-family: var(--font-mono); margin-top: .15rem; }
-.brand svg { flex-shrink: 0; }
+.brand svg, .brand .brand-logo { flex-shrink: 0; border-radius: 50%; }
 
 .nav-toggle {
   display: none;
@@ -248,7 +251,7 @@ main section, main article { padding: 1.75rem 0; }
 }
 .btn:active { transform: translate(2px, 2px); box-shadow: 3px 3px 0 var(--ink); }
 @media (hover: hover) and (pointer: fine) {
-  .btn:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); background: #FFD84A; text-decoration: none; }
+  .btn:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); background: var(--hazard-hot); text-decoration: none; }
 }
 .btn.secondary {
   background: transparent; color: var(--paper); border: 2px solid var(--paper);
@@ -292,8 +295,10 @@ main section, main article { padding: 1.75rem 0; }
   .card:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
 }
 .card h3 { margin: 0 2rem .3rem 0; color: var(--ink); font-size: 1.18rem; line-height: 1.25; font-family: var(--font); font-weight: 700; letter-spacing: 0; }
+/* títulos de ficha dentro de .card: misma escala del cuerpo (no display Anton) */
+.card h2 { margin: 0 2rem .3rem 0; color: var(--ink); font-size: 1.18rem; line-height: 1.25; font-family: var(--font); font-weight: 700; text-transform: none; letter-spacing: 0; text-wrap: balance; }
 .tag { display: inline-block; background: var(--ink); color: var(--paper); font-family: var(--font-mono); font-size: .72rem; font-weight: 500; border-radius: 1px; padding: .22rem .55rem; letter-spacing: .1em; text-transform: uppercase; }
-.tag.alt { background: var(--orange); color: var(--paper); }
+.tag.alt { background: var(--orange); color: #FFFFFF; }
 
 /* ==========================================================================
    CATÁLOGO — índice de plano (lista de programas)
@@ -400,15 +405,15 @@ code { background: #E7E2D4; padding: .1em .35em; border-radius: 2px; font-size: 
    FOOTER — colofón de imprenta con wordmark Anton
    ========================================================================== */
 .site-footer {
-  background: var(--ink); color: var(--paper);
+  background: var(--deep-ink); color: var(--paper);
   margin-top: 2.5rem; padding-bottom: env(safe-area-inset-bottom);
   border-top: 4px solid var(--hazard);
 }
 .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 1.75rem; padding: 2rem 0 1.25rem; }
 .footer-title { font-family: var(--font-mono); font-weight: 500; color: var(--hazard); margin: 0 0 .5rem; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; }
 .site-footer address { font-style: normal; line-height: 1.7; }
-.site-footer a { color: var(--hazard); text-decoration: underline; text-decoration-color: rgba(242, 194, 48, .45); }
-.site-footer a:hover { color: #FFD84A; }
+.site-footer a { color: var(--hazard); text-decoration: underline; text-decoration-color: rgba(250, 212, 65, .45); }
+.site-footer a:hover { color: var(--hazard-hot); }
 .site-footer a:focus-visible { outline: 3px solid var(--hazard); outline-offset: 2px; }
 .footer-links { list-style: none; padding: 0; margin: 0; }
 .footer-links li { margin: .18rem 0; }
