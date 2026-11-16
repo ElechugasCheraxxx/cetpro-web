@@ -7,14 +7,14 @@ pagination:
 permalink: "/oferta-formativa/{{ programa.id }}/"
 eleventyComputed:
   title: "{{ programa.nombre }}"
-  description: "Ficha informativa de {{ programa.nombre }} — CETPRO San Luis (fuente pública)."
+  description: "Ficha informativa de {{ programa.nombre }} — CETPRO San Luis."
 ---
 <article class="wrap">
   <h1>{{ programa.nombre }}</h1>
   <p class="lead">{% if programa.nivel == 'carrera-tecnica' %}Carrera técnica · {{ programa.duracion }} · Título de técnico a nombre de la Nación{% else %}Auxiliar técnico · {{ programa.duracion }} · Certificado de auxiliar técnico{% endif %}</p>
 
   <div class="notice">
-    <p>Fuente pública: {{ programa.source }}. Datos difundidos oficialmente por el CETPRO San Luis y las autoridades sectoriales; esta ficha es informativa y no reemplaza los documentos oficiales de la institución. Los perfiles, capacidades y módulos se publicarán cuando exista documentación oficial confirmable.</p>
+    <p>Esta ficha es informativa y no reemplaza los documentos oficiales de la institución. Los perfiles, capacidades y módulos se publicarán cuando exista documentación oficial confirmable.</p>
   </div>
 
   <h2>Datos generales</h2>
@@ -24,7 +24,7 @@ eleventyComputed:
       <tr><th scope="row">Programa</th><td>{{ programa.nombre }}</td></tr>
       <tr><th scope="row">Nivel</th><td>{% if programa.nivel == 'carrera-tecnica' %}Carrera técnica{% else %}Auxiliar técnico{% endif %}</td></tr>
       <tr><th scope="row">Duración</th><td>{{ programa.duracion }}</td></tr>
-      <tr><th scope="row">Certificación</th><td>A nombre de la Nación (según fuente pública)</td></tr>
+      <tr><th scope="row">Certificación</th><td>A nombre de la Nación</td></tr>
       <tr><th scope="row">Modalidad</th><td>Presencial · 80 % práctica (enfoque técnico-productiva pública)</td></tr>
       <tr><th scope="row">Costo</th><td>Gratuito</td></tr>
       <tr><th scope="row">Admisión</th><td>Sin examen; 14 años en adelante (ver <a href="/admision/">Admisión</a>)</td></tr>
@@ -33,5 +33,4 @@ eleventyComputed:
 
   <p><a class="btn" href="/admision/">Quiero inscribirme</a> <a class="btn secondary-light" href="/contacto/">Consultar al CETPRO</a></p>
 
-  <p class="card-caption">Fuente: {{ programa.source }} · Última verificación: 2026-11-15 · Datos citados, no oficiales.</p>
 </article>
