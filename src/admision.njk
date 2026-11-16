@@ -11,23 +11,39 @@ description: Admisión al CETPRO San Luis — sin examen, gratuita; desde los 14
     <img class="parallax" src="/assets/img/sewing-class.jpg" width="1125" height="750" alt="Estudiante de textil y confección en clase de costura (imagen de referencia, Pexels)" loading="eager" decoding="async">
   </div>
 
-  <h2>Requisitos</h2>
-  <ul class="list-check">
-    {% for r in admision.items[0].requisitos %}<li>{{ r }}</li>{% endfor %}
-  </ul>
+  <section aria-labelledby="req">
+    <div class="spec-head"><span class="spec-num">§ 01</span><h2 id="req" class="section-title">Requisitos</h2></div>
+    <div class="cards">
+      <div class="card reveal"><h3>Primaria culminada</h3><p>{{ admision.items[0].requisitos[0] }}</p></div>
+      <div class="card reveal"><h3>Edad mínima</h3><p>{{ admision.items[0].requisitos[1] }}</p></div>
+      <div class="card reveal"><h3>Documentos base</h3><p>{{ admision.items[0].requisitos[2] }}</p></div>
+    </div>
+  </section>
 
-  <h2>¿Qué documentos llevar?</h2>
-  <ul class="list-check">
-    {% for d in admision.items[0].documentos %}<li>{{ d }}</li>{% endfor %}
-  </ul>
+  <section aria-labelledby="docs">
+    <div class="spec-head"><span class="spec-num">§ 02</span><h2 id="docs" class="section-title">¿Qué documentos llevar?</h2></div>
+    <div class="cards">
+      <div class="card reveal"><h3>Identidad</h3><p>{{ admision.items[0].documentos[0] }}</p></div>
+      <div class="card reveal"><h3>Estudios</h3><p>{{ admision.items[0].documentos[1] }}</p></div>
+      <div class="card reveal"><h3>Foto</h3><p>{{ admision.items[0].documentos[2] }}</p></div>
+    </div>
+  </section>
 
-  <h2>¿Cómo inscribirme?</h2>
-  <ol>
-    {% for p in admision.items[0].pasos %}<li>{{ p }}</li>{% endfor %}
-  </ol>
+  <section aria-labelledby="pasos">
+    <div class="spec-head"><span class="spec-num">§ 03</span><h2 id="pasos" class="section-title">¿Cómo inscribirme?</h2></div>
+    <div class="cards">
+      {% for p in admision.items[0].pasos %}
+      <div class="card reveal"><h3>Paso {{ loop.index }}</h3><p>{{ p }}</p></div>
+      {% endfor %}
+    </div>
+  </section>
 
-  <h2>¿Cuánto cuesta?</h2>
-  <p>{{ admision.items[0].costo }}</p>
+  <section aria-labelledby="costo">
+    <div class="spec-head"><span class="spec-num">§ 04</span><h2 id="costo" class="section-title">¿Cuánto cuesta?</h2></div>
+    <div class="cards cards-2">
+      <div class="card reveal"><h3>Gratuito</h3><p>{{ admision.items[0].costo }}</p></div>
+    </div>
+  </section>
 
   <div class="notice">
     <p><strong>Fechas de admisión 2026-2027:</strong> no publicadas de forma oficial. Este sitio no muestra fechas de matrícula sin confirmación institucional; para confirmarlas, comunícate al <a href="tel:+5113233342">+51 1 323-3342</a> o escribe a <a href="mailto:cetprosanluis@gmail.com">cetprosanluis@gmail.com</a>.</p>
