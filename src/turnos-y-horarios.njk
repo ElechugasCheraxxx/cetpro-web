@@ -3,9 +3,10 @@ layout: base.njk
 title: Turnos y horarios
 description: "Tres turnos de formación —mañana, tarde y noche— en el CETPRO San Luis. Horarios exactos por programa se confirman por teléfono."
 ---
-<article class="wrap">
-  <h1>Turnos y horarios</h1>
-  <p class="lead">El CETPRO San Luis atiende en <strong>tres turnos: mañana, tarde y noche</strong>.</p>
+<article>
+  {% set ph_eyebrow = "TURNOS · MAÑANA / TARDE / NOCHE" %}{% set ph_card_tag = "[ 3 ]" %}{% set ph_card_title = "Tres turnos" %}{% set ph_card_desc = "Mañana, tarde y noche para compatibilizar estudio y trabajo." %}{% set ph_title = "Turnos y horarios" %}{% set ph_lead = "El CETPRO San Luis atiende en <strong>tres turnos: mañana, tarde y noche</strong>." %}{% set ph_cta_text = "Quiero estudiar" %}{% set ph_cta_href = "/admision/" %}
+  {% include "page-hero.njk" %}
+  <div class="wrap">
 
   <table>
     <thead><tr><th scope="col">Turno</th><th scope="col">Horario</th></tr></thead>
@@ -21,4 +22,5 @@ description: "Tres turnos de formación —mañana, tarde y noche— en el CETPR
   </div>
 
   <p class="card-caption">Los horarios exactos no se publican sin un cuadro oficial validado por la institución.</p>
+  </div>
 </article>

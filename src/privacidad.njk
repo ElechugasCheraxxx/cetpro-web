@@ -3,8 +3,10 @@ layout: base.njk
 title: Aviso de privacidad
 description: El CETPRO San Luis no recolecta datos personales; este aviso describe el tratamiento y los derechos conforme a la Ley N.° 29733.
 ---
-<article class="wrap">
-  <h1>Aviso de privacidad</h1>
+<article>
+  {% set ph_eyebrow = "AVISO DE PRIVACIDAD · LEY N.° 29733" %}{% set ph_card_tag = "[ 0 DATOS ]" %}{% set ph_card_title = "El sitio no recolecta datos" %}{% set ph_card_desc = "Sin formularios, cuentas ni analítica con identificación personal." %}{% set ph_title = "Aviso de privacidad" %}
+  {% include "page-hero.njk" %}
+  <div class="wrap">
 
   <h2>El sitio no recolecta datos personales</h2>
   <p>Este sitio web institucional es <strong>informativo y estático</strong>: no hay formularios, cuentas, cookies de seguimiento ni analítica con identificación personal. Ningún dato que introduzcas en el sitio es enviado ni almacenado por él. Los enlaces externos (Google Maps, redes sociales) se abren en ventana nueva y sus operadores tratan tus datos según sus propias políticas.</p>
@@ -19,4 +21,5 @@ description: El CETPRO San Luis no recolecta datos personales; este aviso descri
   <p>Este aviso se redacta conforme a la Ley N.° 29733, Ley de Protección de Datos Personales (publicada en El Peruano el 3 de julio de 2011; última modificación por el D. Leg. 1353 del 07/01/2017) y su Reglamento, aprobado por Decreto Supremo N.° 016-2024-JUS. En la medida en que el sitio no recolecta ni trata datos personales, el régimen completo de la Ley no activa obligaciones operativas para este sitio.</p>
 
   <p class="card-caption">Última actualización: 2026-11-15 · Este aviso es informativo y no constituye asesoría legal.</p>
+  </div>
 </article>

@@ -1,0 +1,24 @@
+{# Banda hero compartida — lenguaje del mockup (retícula + glow + cristal) en todas las rutas.
+   Uso: {% set ph_title = "..." %} ... {% include "page-hero.njk" %} #}
+<section class="page-hero">
+  <div class="ph-glow" aria-hidden="true"></div>
+  <div class="grid-lines ph-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="wrap ph-inner">
+    {% if ph_eyebrow %}<p class="ph-eyebrow">{{ ph_eyebrow }}</p>{% endif %}
+    {% if ph_card_title %}
+    <div class="glass ph-card" role="note" aria-label="{{ ph_card_label | default(ph_card_title) }}">
+      <span class="glass-tag">{{ ph_card_tag | default("[ CETPRO ]") }}</span>
+      <p class="glass-title">{{ ph_card_title }}</p>
+      {% if ph_card_desc %}<p class="glass-desc">{{ ph_card_desc }}</p>{% endif %}
+    </div>
+    {% endif %}
+    <h1 class="ph-title">{{ ph_title }}</h1>
+    {% if ph_lead %}<p class="ph-lead">{{ ph_lead }}</p>{% endif %}
+    {% if ph_cta_href %}
+    <p class="ph-cta">
+      <a class="btn" href="{{ ph_cta_href }}">{{ ph_cta_text | default("Quiero estudiar") }} &#8594;</a>
+      {% if ph_ghost_href %}<a class="ghost-btn" href="{{ ph_ghost_href }}">{{ ph_ghost_text | default("Ver oferta") }} &#8594;</a>{% endif %}
+    </p>
+    {% endif %}
+  </div>
+</section>

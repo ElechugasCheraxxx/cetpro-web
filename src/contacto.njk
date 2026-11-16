@@ -3,8 +3,10 @@ layout: base.njk
 title: Contacto y ubicación
 description: Ubicación, teléfono y correo del CETPRO San Luis — Jr. Cabo Yen Escobedo Garro N.° 381, Urb. La Viña, San Luis, Lima.
 ---
-<article class="wrap">
-  <h1>Contacto y ubicación</h1>
+<article>
+  {% set ph_eyebrow = "CONTACTO · SAN LUIS, LIMA" %}{% set ph_card_tag = "[ ATENCIÓN ]" %}{% set ph_card_title = "Atención directa" %}{% set ph_card_desc = "Teléfono y correo oficiales de la institución." %}{% set ph_title = "Contacto y ubicación" %}{% set ph_lead = "Jr. Cabo Yen Escobedo Garro N.° 381, Urb. La Viña — distrito de San Luis, Lima. Cruce de Av. Del Aire y Av. Rosa Toro." %}{% set ph_cta_text = "Abrir en Google Maps" %}{% set ph_cta_href = "https://www.google.com/maps/search/Jr.+Yen+Escobedo+381+San+Luis+Lima" %}{% set ph_ghost_text = "Llamar" %}{% set ph_ghost_href = "tel:+5113233342" %}
+  {% include "page-hero.njk" %}
+  <div class="wrap">
   <address class="contact">
     <p><strong>Centro de Educación Técnico-Productiva San Luis</strong><br>
     Jr. Cabo Yen Escobedo Garro N.° 381<br>
@@ -29,4 +31,5 @@ description: Ubicación, teléfono y correo del CETPRO San Luis — Jr. Cabo Yen
     <p><strong>¿Eres parte del CETPRO y necesitas actualizar datos?</strong> Este sitio es informativo y se actualiza mediante el repositorio institucional. Para solicitar cambios de teléfono, correo u horarios, escribe a <a href="mailto:cetprosanluis@gmail.com">cetprosanluis@gmail.com</a>.</p>
   </div>
 
+  </div>
 </article>
