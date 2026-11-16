@@ -13,7 +13,7 @@ description: 6 carreras técnicas (2 años) y 6 programas de auxiliar técnico (
   <h2>Carreras técnicas <span class="small muted">(duración: 2 años)</span></h2>
   <div class="cards">
     {% for a in areas.items | filterBy('nivel', 'carrera-tecnica') %}
-    <article class="card">
+    <article class="card reveal">
       <h3>{{ a.nombre }}</h3>
       <p class="muted small">{{ a.duracion }} · Títulos a nombre de la Nación</p>
       <p><a href="/oferta-formativa/{{ a.id }}/">Ver ficha →</a></p>
@@ -24,7 +24,7 @@ description: 6 carreras técnicas (2 años) y 6 programas de auxiliar técnico (
   <h2>Programas de auxiliar técnico <span class="small muted">(duración: 1 año)</span></h2>
   <div class="cards">
     {% for a in areas.items | filterBy('nivel', 'auxiliar-tecnico') %}
-    <article class="card">
+    <article class="card reveal">
       <h3>{{ a.nombre }}</h3>
       <p class="muted small">{{ a.duracion }} · Certificado modular de auxiliar técnico</p>
       <p><a href="/oferta-formativa/{{ a.id }}/">Ver ficha →</a></p>

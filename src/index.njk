@@ -24,7 +24,7 @@ pageLead: "Centro de Educación Técnico-Productiva San Luis: más de 60 años f
   <p class="muted">6 carreras técnicas (2 años) · 6 programas de auxiliar técnico (1 año) — según fuentes públicas (Agencia Andina, 08/12/2025).</p>
   <div class="cards">
     {% for a in areas.items | limit(6) %}
-    <article class="card">
+    <article class="card reveal">
       <span class="tag">{{ 'Carrera técnica' if a.nivel == 'carrera-tecnica' else 'Auxiliar técnico' }}</span>
       <h3>{{ a.nombre }}</h3>
       <p class="muted small">{{ a.duracion }}</p>
@@ -37,10 +37,10 @@ pageLead: "Centro de Educación Técnico-Productiva San Luis: más de 60 años f
 
 <section class="wrap" aria-labelledby="por-que">
   <div class="cards">
-    <div class="card"><h2 id="por-que">Gratuito</h2><p>La formación técnica en CETPRO públicos es gratuita y no hay examen de admisión: máximo esfuerzo práctico (80 % práctica) y certificación a nombre de la Nación.</p></div>
-    <div class="card"><h2>3 turnos</h2><p>Mañana, tarde y noche: compatibiliza tus estudios con tu trabajo o familia.</p></div>
-    <div class="card"><h2>14+</h2><p>Sin límite de edad. Adolescentes desde los 14 años y adultos, incluidos adultos mayores.</p></div>
-    <div class="card"><h2>Inclusivo</h2><p>Comunidad con ~15 estudiantes con discapacidad; institución comprometida con la inclusión.</p></div>
+    <div class="card reveal"><h2 id="por-que">Gratuito</h2><p>La formación técnica en CETPRO públicos es gratuita y no hay examen de admisión: máximo esfuerzo práctico (80 % práctica) y certificación a nombre de la Nación.</p></div>
+    <div class="card reveal"><h2>3 turnos</h2><p>Mañana, tarde y noche: compatibiliza tus estudios con tu trabajo o familia.</p></div>
+    <div class="card reveal"><h2>14+</h2><p>Sin límite de edad. Adolescentes desde los 14 años y adultos, incluidos adultos mayores.</p></div>
+    <div class="card reveal"><h2>Inclusivo</h2><p>Comunidad con ~15 estudiantes con discapacidad; institución comprometida con la inclusión.</p></div>
   </div>
 </section>
 
