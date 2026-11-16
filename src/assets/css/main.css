@@ -220,6 +220,91 @@ main section, main article { padding: 1.75rem 0; }
   transform: rotate(-9deg); pointer-events: none; user-select: none;
 }
 
+/* ==========================================================================
+   HERO MOTION — portada del mockup adaptada (video + liquid glass + CMY)
+   ========================================================================== */
+.hero-motion {
+  position: relative; min-height: 100svh; display: flex; align-items: center;
+  overflow: hidden; background: var(--deep-ink); color: var(--paper);
+  padding: 7rem 0 5rem; border-bottom: none;
+}
+.hero-video {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: .6; z-index: 0; background: var(--deep-ink);
+}
+.overlay-left, .overlay-bottom { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.overlay-left { background: linear-gradient(90deg, #070B0A 0%, rgba(7,11,10,.74) 32%, rgba(7,11,10,.2) 60%, transparent 76%); }
+.hero-motion::before { content: ""; position: absolute; z-index: 2; inset: 0 0 auto; height: 160px; background: linear-gradient(#070B0A, transparent); pointer-events: none; }
+.overlay-bottom { background: linear-gradient(0deg, #070B0A 0%, rgba(7,11,10,.5) 26%, transparent 52%); }
+.grid-lines { position: absolute; inset: 0; z-index: 1; pointer-events: none; display: none; }
+.grid-lines span { position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(255,255,255,.10); }
+.grid-lines span:nth-child(1) { left: 25%; }
+.grid-lines span:nth-child(2) { left: 50%; }
+.grid-lines span:nth-child(3) { left: 75%; }
+@media (min-width: 1024px) { .grid-lines { display: block; } }
+.glow { position: absolute; z-index: 1; top: 5%; left: 50%; transform: translateX(-50%); width: min(72vw, 900px); height: 280px; opacity: .75; pointer-events: none; }
+.hero-motion .hero-grid { position: relative; z-index: 5; grid-template-columns: 1fr; gap: 0; }
+.hero-motion .hero-copy { max-width: 720px; }
+.glass {
+  position: relative; width: 200px; height: 200px; border-radius: 18px; isolation: isolate;
+  background: rgba(255,255,255,.01); background-blend-mode: luminosity;
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,.1);
+  transform: translateY(-38px); padding: 1rem 1.1rem;
+  display: flex; flex-direction: column; justify-content: flex-end; gap: .4rem;
+  margin-bottom: -.5rem;
+}
+.glass::before {
+  content: ""; position: absolute; inset: 0; border-radius: 18px; padding: 1.4px; pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,.5) 0%, rgba(255,255,255,.14) 34%, rgba(255,255,255,.02) 62%, rgba(255,255,255,.22) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+.glass-tag { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .18em; color: var(--hazard); text-transform: uppercase; }
+.glass-title { margin: 0; font-weight: 700; font-size: 1.02rem; line-height: 1.25; color: var(--paper); }
+.glass-title em { font-style: italic; font-weight: 400; color: #FFFFFF; }
+.glass-desc { margin: 0; font-size: .75rem; line-height: 1.4; color: rgba(245,241,234,.72); }
+.eyebrow-motion {
+  font-family: var(--font-mono); font-weight: 500; font-size: .74rem; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--hazard); margin: 0 0 .7rem;
+}
+.hero-motion h1 {
+  font-size: clamp(2.6rem, 6.6vw, 4.6rem); line-height: .96; color: var(--paper);
+  margin: 0 0 1.1rem; max-width: 20ch; text-wrap: balance;
+}
+.hero-motion h1 .accent { color: var(--hazard); }
+.hero-motion p.lead { color: rgba(245,241,234,.9); font-size: 1.04rem; max-width: 46ch; margin: 0 0 1.5rem; }
+.hero-motion p.lead strong { color: var(--paper); }
+.hero-motion .hero-cta { display: flex; flex-wrap: wrap; gap: .9rem; align-items: center; margin: 0 0 1.2rem; }
+.hero-motion .motion-btn { border-radius: 999px; box-shadow: none; padding: .95rem 1.6rem; }
+.hero-motion .motion-btn:hover { background: var(--hazard-hot); transform: translateY(-1px); box-shadow: none; }
+.ghost-btn {
+  color: var(--paper); text-decoration: none; font-family: var(--font-mono); font-size: .8rem;
+  letter-spacing: .12em; text-transform: uppercase; border-bottom: 2px solid rgba(245,241,234,.45);
+  padding-bottom: .15rem; transition: color 160ms var(--ease-hover), border-color 160ms var(--ease-hover);
+}
+.ghost-btn:hover { color: var(--hazard); border-color: var(--hazard); text-decoration: none; }
+.hero-motion .spec-foot { color: rgba(245,241,234,.72); border-top: 1px dashed rgba(245,241,234,.28); max-width: 62ch; }
+.video-credit {
+  position: absolute; z-index: 6; left: clamp(1.1rem, 5vw, 3.5rem); bottom: .9rem;
+  font-family: var(--font-mono); font-size: .75rem; color: rgba(245,241,234,.72); max-width: 90%;
+}
+.video-credit strong { color: rgba(245,241,234,.85); }
+/* header transparente solo en la portada con video */
+body.home .site-header { position: fixed; left: 0; right: 0; background: transparent; border-bottom-color: rgba(245,241,234,.16); }
+body.home .site-header.is-scrolled { background: var(--deep); }
+@media (prefers-reduced-motion: reduce) {
+  .hero-video { display: none; }
+  .hero-motion { background: var(--deep-ink); }
+}
+@media (max-width: 900px) {
+  .glass { width: 172px; height: 172px; transform: translateY(-30px); }
+  .hero-motion { min-height: auto; padding: 6rem 0 3.5rem; }
+  .video-credit { position: static; margin: 2rem 0 0; padding: 0 1rem; }
+}
+
 /* friso hazard: separador de obra */
 .hazard-bar {
   height: 12px;

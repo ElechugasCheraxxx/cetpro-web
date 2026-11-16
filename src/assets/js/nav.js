@@ -65,3 +65,10 @@ if (window.gsap && window.ScrollTrigger && !window.matchMedia('(prefers-reduced-
 
   // Hero copy: visible por defecto (sin animación above-the-fold).
 }
+
+/* Hero con video: reproducir tras carga (sin atributo autoplay: html-validate lo prohíbe)
+   y solo si el usuario no pidió reducir movimiento. */
+const heroVideo = document.querySelector('.hero-video');
+if (heroVideo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  heroVideo.play().catch(() => {});
+}
