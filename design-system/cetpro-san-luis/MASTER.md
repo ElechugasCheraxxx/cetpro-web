@@ -7,7 +7,7 @@
 ---
 
 **Project:** CETPRO San Luis
-**Generated:** 2026-11-16 02:03:58 · **Revisado:** 2026-11-16 (v3.1 · logotipo oficial + paleta CMY)
+**Generated:** 2026-11-16 02:03:58 · **Revisado:** 2026-11-16 (v3.3 · modo oscuro global, todas las rutas)
 **Category:** Government/Public Service
 
 ---
@@ -16,23 +16,24 @@
 
 ### Dirección de arte
 
-*Manual técnico de un taller público*: papel de plano, tinta, planchas verdes profundas, naranja de señal y hazard. Marcos de imprenta con desfase duro. Nada de degradados, sombras suaves ni tarjetas redondeadas genéricas. Anton (display) + Atkinson Hyperlegible (cuerpo) + IBM Plex Mono (anotaciones). Índices de plano `§ NN` por sección; oferta formativa como índice de catálogo (`C-NN`, `A-NN`); wordmark Anton de colofón.
+*Manual técnico de un taller público en modo oscuro*: plancha `#070B0A` con retícula de puntos, fichas de cristal oscuro, cian para enlaces, amarillo engranaje para CTA y fucsia para desfases. Marcos de imprenta con desfase duro. Nada de degradados, sombras suaves ni tarjetas redondeadas genéricas. Anton (display) + Atkinson Hyperlegible (cuerpo) + IBM Plex Mono (anotaciones). Índices de plano `§ NN` por sección; oferta formativa como índice de catálogo (`C-NN`, `A-NN`); wordmark Anton de colofón.
 
 ### Color Palette
 
 | Role | Hex | CSS Variable |
 |------|-----|--------------|
-| Paper | `#ECEEE7` | `--paper` |
-| Surface (fichas) | `#FDFCF6` | `--surface` |
+| Paper (texto claro) | `#F5F1EA` | `--paper` |
+| Background (plancha global) | `#070B0A` | `--bg` |
+| Surface (cristal oscuro) | `#101820` | `--surface` |
 | Ink (wordmark del logo) | `#13140F` | `--ink` |
 | Deep (azul lema del logo: planchas/header/footer) | `#1C2F57` | `--deep` |
 | Deep Ink (azul profundo drawer) | `#131F36` | `--deep-ink` |
-| Navy links (enlaces/índices) | `#1C2F57` | `--rust` |
+| Cian links (enlaces/índices) | `#55CCEE` | `--rust` |
 | Magenta engranaje (acentos/tags) | `#B42C9B` | `--orange` |
 | Amarillo engranaje (CTA/friso/selección) | `#FAD441` | `--hazard` |
 | Cian engranaje (**solo gráficos**) | `#3ABDE9` | `--cyan` (1.9:1 sobre papel: nunca texto) |
-| Muted | `#57534A` | `--muted` |
-| Border suave | `#D3D6CB` | `--line-soft` |
+| Muted sobre plancha | `#AEB8C0` | `--muted` |
+| Border sobre plancha | `#2C3740` | `--line` / `--line-soft` |
 | Destructive | `#DC2626` | `--color-destructive` (utilidad `.btn.danger`) |
 | Ring (focus) | `#16150F` (papel) / `#F2C230` (quemado/oscuro) | `--color-ring` |
 

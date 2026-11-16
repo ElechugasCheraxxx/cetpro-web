@@ -1,6 +1,6 @@
-# Design system — CETPRO San Luis (v3.1 · "Plano de taller" + paleta del logotipo oficial)
+# Design system — CETPRO San Luis (v3.3 · "Plano de taller" OSCURO en todas las rutas)
 
-**Evolución a v3.1 (16/11/2026):** el equipo entregó el **logotipo oficial** (insignia circular, engranajes cian/fucsia/amarillo) corroborado en el FB público; sustituye al emblema provisional y define la paleta. **Evolución a v3 (16/11/2026):** se abandona la base genérica "Instituciones públicas / Accessible & Ethical (slate+sky)" por una dirección de arte con punto de vista: *manual técnico de un taller público peruano* — Anton para display condensado, Atkinson Hyperlegible para cuerpo, IBM Plex Mono para anotaciones e índices, marcos de imprenta con desfase duro (sin sombras suaves ni degradados), filetes de tinta y sello institucional impreso. Motivo: la identidad debe sentirse *taller/obra*, no *SaaS institucional*.
+**Evolución a v3.3 (16/11/2026):** el mismo lenguaje de alta gama del hero (fondo `#070B0A`, retícula de puntos, fichas de cristal oscuro, cian para enlaces, amarillo para CTA, fucsia para desfases) se aplica a **todas las secciones y todas las rutas**. **Evolución a v3.1 (16/11/2026):** el equipo entregó el **logotipo oficial** (insignia circular, engranajes cian/fucsia/amarillo) corroborado en el FB público; sustituye al emblema provisional y define la paleta. **Evolución a v3 (16/11/2026):** se abandona la base genérica "Instituciones públicas / Accessible & Ethical (slate+sky)" por una dirección de arte con punto de vista: *manual técnico de un taller público peruano* — Anton para display condensado, Atkinson Hyperlegible para cuerpo, IBM Plex Mono para anotaciones e índices, marcos de imprenta con desfase duro (sin sombras suaves ni degradados), filetes de tinta y sello institucional impreso. Motivo: la identidad debe sentirse *taller/obra*, no *SaaS institucional*.
 
 **Fecha:** 16/11/2026 · **Estado:** implementado en producción (`https://cetpro.pages.dev/`) tras PR #20.
 
@@ -12,16 +12,16 @@ Manual de taller a dos tintas con aplicación de color: papel de plano gris verd
 
 | Token | Hex | Rol | Contraste verificado |
 |---|---|---|---|
-| `--paper` | `#ECEEE7` | Fondo (papel de plano) | ink sobre paper 15.8:1 ✓ |
-| `--surface` | `#FDFCF6` | Fichas/tarjetas | ✓ AA |
+| `--bg` | `#070B0A` | Fondo global (plancha, retícula de puntos) | paper sobre bg ≈17:1 ✓ |
+| `--surface` | `#101820` | Fichas/tarjetas: cristal oscuro + `backdrop-filter: blur(6px)` | paper sobre surface ≈15:1 ✓ |
 | `--ink` | `#13140F` | Texto (negro del wordmark del logo) | vs paper 15.8:1 ✓ |
 | `--deep` / `--deep-ink` | `#1C2F57` / `#131F36` | Planchas azul del lema del logo (header/footer/drawer) | paper sobre deep 11.3:1 ✓ |
-| `--rust` | `#1C2F57` | Enlaces sobre papel, índices § | vs paper 11.3:1 ✓ AA |
+| `--rust` | `#55CCEE` | Enlaces, índices § sobre plancha | vs bg ≈9:1 ✓ AA |
 | `--orange` | `#B42C9B` | Fucsia del logo: acentos y tags auxiliares | vs paper 4.8:1 ✓ (tag fucsia/texto blanco 5.6:1) |
 | `--hazard` / `--hazard-hot` | `#FAD441` / `#FFE066` | Amarillo engranaje: CTA, friso, selección | ink sobre hazard 12.8:1 ✓ |
 | `--cyan` | `#3ABDE9` | Cian del logo: **solo gráficos y subrayados decorativos** | vs paper 1.9:1 → **nunca texto** |
-| `--muted` | `#57534A` | Texto secundario | vs paper 6.6:1 ✓ |
-| `--line-soft` | `#D3D6CB` | Zebra tablas, filetes suaves | no aplica a texto |
+| `--muted` | `#AEB8C0` | Texto secundario sobre plancha | vs bg ≈8:1 ✓ |
+| `--line` / `--line-soft` | `#2C3740` | Filetes y zebra sobre plancha | no aplica a texto |
 
 Regla dura: el cian `#3ABDE9` es decoración (1.9:1); el fucsia `#B42C9B` se usa para tag con texto **blanco** (5.6:1).
 
