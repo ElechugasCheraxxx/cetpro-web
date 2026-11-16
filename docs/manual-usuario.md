@@ -14,7 +14,7 @@ En palabras simples:
 
 ## ¿Cómo ver el sitio?
 
-- URL pública: `https://<proyecto>.pages.dev/` (o el dominio que apruebe la Dirección en el futuro).
+- URL pública: `https://cetpro.pages.dev/` (o el dominio que apruebe la Dirección en el futuro).
 - Alternativa (solo respaldo): `https://respaldo.<dominio>/` (si existe zona DNS) o túnel temporal en demo en vivo.
 - El sitio abre en cualquier navegador del celular (datos móviles).
 

@@ -10,7 +10,7 @@ Audiencia: equipo del proyecto + docente evaluador. Para demo de mantenimiento.
   - `CF_API_TOKEN` — token con permiso **Cloudflare Pages:Edit** y **Account: Read** (crear en https://dash.cloudflare.com/profile/api-tokens).
   - `CF_ACCOUNT_ID` — Account ID (panel derecho del dashboard, "Account ID").
 - Variable del repo: `DEPLOY_PAGES` (Settings → Variables): por defecto `false`; al poner `true` el job `deploy` publicará en Pages con cada merge a `main`.
-- Proyecto en Pages: `<proyecto>.pages.dev` creado en el panel (Pages → Create a project → Connect to Git → `cetpro-web`, build command `npm run build`, output `dist`).
+- Proyecto en Pages: `cetpro.pages.dev` creado en el panel (Pages → Create a project → Connect to Git → `cetpro-web`, build command `npm run build`, output `dist`).
 
 Sin secrets, el CI corre igual pero el job de deploy se salta (CI verde por defecto); con secrets + variable, publica.
 
@@ -33,7 +33,7 @@ Windows VM (cuando esté en WEB01): CETPRO-Sync-Site descarga la release
 
 1. Rama `contenido/<area>` o `fix/<desc>` → PR a `main` → checks verdes → doble revisor → merge.
 2. El Actions ejecuta build y despliega a Pages; obtiene URL pública.
-3. En WEB01: `Start-ScheduledTask CETPRO-Sync-Site` (o esperar ≤ 15 min) → `Invoke-WebRequest http://127.0.0.1:8080/version.json` → comparar con `https://<proyecto>.pages.dev/version.json` (MP-PW §9.9).
+3. En WEB01: `Start-ScheduledTask CETPRO-Sync-Site` (o esperar ≤ 15 min) → `Invoke-WebRequest http://127.0.0.1:8080/version.json` → comparar con `https://cetpro.pages.dev/version.json` (MP-PW §9.9).
 4. Evidencia archivada: release y run de Actions en `evidencias/`.
 
 ## 4. Rollback
@@ -50,6 +50,6 @@ Windows VM (cuando esté en WEB01): CETPRO-Sync-Site descarga la release
 
 ## 6. Qué verificar tras cada despliegue
 
-- `curl -I https://<proyecto>.pages.dev/` → 200 + headers (CSP/XFO/XCTO).
-- `curl -s https://<proyecto>.pages.dev/version.json` + mismo en `http://127.0.0.1:8080/version.json` → mismos `build` y `commit`.
+- `curl -I https://cetpro.pages.dev/` → 200 + headers (CSP/XFO/XCTO).
+- `curl -s https://cetpro.pages.dev/version.json` + mismo en `http://127.0.0.1:8080/version.json` → mismos `build` y `commit`.
 - Revisión puntual de las páginas clave en navegador externo.
