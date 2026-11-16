@@ -7,7 +7,7 @@
 ---
 
 **Project:** CETPRO San Luis
-**Generated:** 2026-11-16 02:03:58 · **Revisado:** 2026-11-16 (v3 · "Plano de taller")
+**Generated:** 2026-11-16 02:03:58 · **Revisado:** 2026-11-16 (v3.1 · logotipo oficial + paleta CMY)
 **Category:** Government/Public Service
 
 ---
@@ -24,18 +24,19 @@
 |------|-----|--------------|
 | Paper | `#ECEEE7` | `--paper` |
 | Surface (fichas) | `#FDFCF6` | `--surface` |
-| Ink (texto/filetes) | `#16150F` | `--ink` |
-| Deep (planchas) | `#0E3B2C` | `--deep` |
-| Deep Ink (drawer móvil) | `#0A2A20` | `--deep-ink` |
-| Rust (enlaces/índices) | `#9A3412` | `--rust` |
-| Orange (acento NO texto) | `#C2410C` | `--orange` |
-| Hazard (CTA tinta/friso/sello) | `#F2C230` | `--hazard` |
+| Ink (wordmark del logo) | `#13140F` | `--ink` |
+| Deep (azul lema del logo: planchas/header/footer) | `#1C2F57` | `--deep` |
+| Deep Ink (azul profundo drawer) | `#131F36` | `--deep-ink` |
+| Navy links (enlaces/índices) | `#1C2F57` | `--rust` |
+| Magenta engranaje (acentos/tags) | `#B42C9B` | `--orange` |
+| Amarillo engranaje (CTA/friso/selección) | `#FAD441` | `--hazard` |
+| Cian engranaje (**solo gráficos**) | `#3ABDE9` | `--cyan` (1.9:1 sobre papel: nunca texto) |
 | Muted | `#57534A` | `--muted` |
 | Border suave | `#D3D6CB` | `--line-soft` |
 | Destructive | `#DC2626` | `--color-destructive` (utilidad `.btn.danger`) |
 | Ring (focus) | `#16150F` (papel) / `#F2C230` (quemado/oscuro) | `--color-ring` |
 
-**Color Notes:** contrastes medidos — ink/paper 13.4:1 · rust/paper 6.4:1 · paper/deep 10.4:1 · ink/hazard 10.9:1 · muted/paper 6.7:1. El naranja `#C2410C` no se usa para texto de cuerpo.
+**Color Notes (v3.1):** contrastes medidos — ink/paper 15.8:1 · navy/paper 11.3:1 · paper/navy 11.3:1 · magenta/paper 4.8:1 · white/magenta 5.6:1 · ink/yellow 12.8:1 · muted/paper 6.6:1. Cian solo decoración (1.9:1).
 
 ### Tipografía
 
