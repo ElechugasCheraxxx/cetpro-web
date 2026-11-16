@@ -35,18 +35,5 @@ if (header) {
   onScroll();
 }
 
-/* Reveal on view: animar solo transform/opacity; luego soltar el will-change */
 const targets = document.querySelectorAll('.reveal');
-if (targets.length && 'IntersectionObserver' in window && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-  const io = new IntersectionObserver((entries) => {
-    for (const entry of entries) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        io.unobserve(entry.target);
-      }
-    }
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
-  targets.forEach((el) => io.observe(el));
-} else {
-  targets.forEach((el) => el.classList.add('is-visible'));
-}
+// Mantenemos la clase en CSS; el JS ya no anima (estático, sin dependencia).
