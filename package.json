@@ -10,7 +10,7 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "clean": "rm -rf dist",
-    "test": "node --test tests/",
+    "test": "node --test tests/*.test.mjs",
     "check:data": "node scripts/check-data.mjs",
     "check:html": "html-validate \"dist/**/*.html\"",
     "check:links": "linkinator http://localhost:8080 --recurse --concurrency 10 --skip \".*\\.(avif|webp|jpe?g|png|svg|ico)$\"",
