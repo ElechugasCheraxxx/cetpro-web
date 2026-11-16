@@ -40,10 +40,12 @@ jobs:
       - name: html-validate
         run: npx html-validate "dist/**/*.html"
 
+  # NOTA (DEL-17): deploy desactivado hasta que existan los secrets CF_API_TOKEN / CF_ACCOUNT_ID.
+  # Activar: gh repo variable set DEPLOY_PAGES 1 y agrega los secrets; luego main publica en Pages.
   deploy:
     name: Deploy a Cloudflare Pages (main, tras merge)
     needs: test
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push' && vars.DEPLOY_PAGES == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
