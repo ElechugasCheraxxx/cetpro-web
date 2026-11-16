@@ -707,3 +707,99 @@ p { max-width: 56ch; }
 .site-footer a.btn:hover { color: var(--ink); }
 .site-footer a.ghost-btn { color: var(--paper); text-decoration: none; }
 .site-footer a.ghost-btn:hover { color: var(--hazard); }
+
+/* ---- tarjetas de Nosotros: titulares display + chips mono ---- */
+.cards-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.cards-2 .card h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); line-height: 1.02; margin-bottom: .7rem; }
+.chip-row { display: flex; flex-wrap: wrap; gap: .5rem; margin: .9rem 0 0; }
+.chip {
+  display: inline-block; font-family: var(--font-mono); font-size: .72rem; font-weight: 500;
+  letter-spacing: .1em; color: var(--rust); border: 1px solid var(--rust); border-radius: 999px;
+  padding: .32rem .7rem; white-space: nowrap;
+}
+.notice-mision { max-width: 78ch; }
+.notice-mision h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); }
+
+/* ==========================================================================
+   v4.1 — RETÍCULA EDITORIAL (Nosotros)
+   Composición asimétrica: bloque definitorio ancho, bloque de datos con
+   estadísticas, dos listas. Nada de cuadrícula uniforme tipo plantilla.
+   ========================================================================== */
+.cards-editorial {
+  display: grid; grid-template-columns: repeat(12, 1fr);
+  gap: 1.15rem; margin: 0 0 1.15rem;
+}
+.cards-editorial .card {
+  grid-column: span 12; padding: 1.6rem 1.5rem 1.5rem; border-radius: 18px;
+  border: 0; background: rgba(255,255,255,.025); background-blend-mode: luminosity;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+}
+.cards-editorial .card h2 {
+  font-family: var(--font-display); font-weight: 400; text-transform: uppercase;
+  font-size: clamp(1.6rem, 3vw, 2.35rem); line-height: 1.02; letter-spacing: .01em;
+  color: var(--paper); margin: 0 0 .8rem; text-wrap: balance;
+}
+.cards-editorial .card p { margin: 0 0 .6rem; max-width: 56ch; }
+.cards-editorial .card::before { display: none; }
+
+/* pie de tarjeta: línea mono con la fuente de la tarjeta */
+.card-foot {
+  font-family: var(--font-mono); font-size: .74rem; letter-spacing: .04em;
+  color: var(--muted); margin: 1.1rem 0 0 !important; padding-top: .9rem;
+  border-top: 1px solid var(--line); max-width: 52ch;
+}
+
+/* kicker mono sobre cada tarjeta */
+.card-kicker {
+  font-family: var(--font-mono); font-weight: 500; font-size: .74rem; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--hazard); margin: 0 0 .7rem !important;
+}
+.card-kicker::after {
+  content: ""; display: block; width: 2.4rem; height: 2px; margin-top: .5rem;
+  background: linear-gradient(90deg, var(--hazard), transparent);
+}
+
+/* bloque definitorio: columna ancha + columna lateral con el dato duro */
+.cards-editorial .card-lead { grid-column: span 7; }
+.card-lead p { font-size: 1.06rem; line-height: 1.62; color: rgba(245,241,234,.9); }
+.cards-editorial .card-data { grid-column: span 5; }
+.cards-editorial .card-list { grid-column: span 5; }
+.cards-editorial .card-hitos { grid-column: span 7; }
+
+/* estadísticas: cifras grandes en display con etiqueta mono */
+.stat-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .9rem 1rem; margin: 1.1rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line);
+}
+.stat { margin: 0; }
+.stat-value {
+  font-family: var(--font-display); font-weight: 400; font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  line-height: 1; color: var(--rust); letter-spacing: .01em; margin: 0;
+}
+.stat-label {
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--muted); margin: .35rem 0 0; line-height: 1.35;
+}
+.card-list ul { margin: .2rem 0 0; padding: 0; list-style: none; }
+.card-list .list-check li { margin-bottom: .7rem; }
+.card-list .list-check li:last-child { margin-bottom: 0; }
+
+/* aviso de misión: bloque de cristal, destacado por el kicker y no por una franja lateral */
+.cards-editorial .card-mision {
+  grid-column: span 12; position: relative; padding-left: 1.5rem;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.07);
+}
+.card-mision h2 { margin: 0 0 .6rem; }
+
+/* retícula editorial en pantallas medianas: dos columnas iguales */
+@media (max-width: 960px) {
+  .cards-editorial .card-lead,
+  .cards-editorial .card-data,
+  .cards-editorial .card-list,
+  .cards-editorial .card-hitos { grid-column: span 6; }
+}
+@media (max-width: 620px) {
+  .cards-editorial .card { grid-column: span 12; }
+  .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
