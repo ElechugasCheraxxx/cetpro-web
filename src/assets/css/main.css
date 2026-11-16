@@ -149,7 +149,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
    ========================================================================== */
 .site-header {
   position: sticky; top: 0; z-index: 100;
-  background: var(--deep); color: var(--paper);
+  background: rgba(7, 11, 10, .86); color: var(--paper);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   border-bottom: 4px solid var(--hazard);
   padding-top: env(safe-area-inset-top);
 }
@@ -298,7 +299,7 @@ main section + section { border-top: 1px solid var(--line); }
 .video-credit strong { color: rgba(245,241,234,.85); }
 /* header transparente solo en la portada con video */
 body.home .site-header { position: fixed; left: 0; right: 0; background: transparent; border-bottom-color: rgba(245,241,234,.16); }
-body.home .site-header.is-scrolled { background: var(--deep); }
+body.home .site-header.is-scrolled { background: rgba(7, 11, 10, .9); border-bottom-color: var(--hazard); }
 @media (prefers-reduced-motion: reduce) {
   .hero-video { display: none; }
   .hero-motion { background: var(--deep-ink); }
