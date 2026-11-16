@@ -88,7 +88,7 @@ code { background: #e8edf5; padding: .1em .35em; border-radius: 4px; font-size: 
 .site-footer { background: var(--color-primary-dark); color: #dfe9f5; margin-top: 2rem; }
 .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; padding: 1.5rem 0; }
 .footer-title { font-weight: 800; color: #fff; margin: 0 0 .4rem; letter-spacing: .02em; }
-.site-footer a { color: #ffd84d; text-decoration: none; }
+.site-footer a { color: #ffd84d; text-decoration: underline; }
 .site-footer a:hover { text-decoration: underline; }
 .footer-links { list-style: none; padding: 0; margin: 0; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,.2); padding: .6rem 0 1rem; font-size: .85rem; color: #9fb8d4; }
