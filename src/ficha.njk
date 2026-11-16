@@ -10,7 +10,7 @@ eleventyComputed:
   description: "Ficha informativa de {{ programa.nombre }} — CETPRO San Luis."
 ---
 <article>
-  {% set ph_eyebrow = "FICHA · {{ programa.id | upper }}" %}{% set ph_card_tag = "[" ~ ("2 AÑOS" if programa.nivel == "carrera-tecnica" else "1 AÑO") ~ "]" %}{% set ph_card_title = "{{ programa.nombre }}" %}{% set ph_card_desc = "Presencial · certificación a nombre de la Nación." %}{% set ph_title = "{{ programa.nombre }}" %}{% set ph_lead = "{% if programa.nivel == 'carrera-tecnica' %}Carrera técnica · {{ programa.duracion }} · Título de técnico a nombre de la Nación{% else %}Auxiliar técnico · {{ programa.duracion }} · Certificado de auxiliar técnico{% endif %}" %}{% set ph_cta_text = "Quiero inscribirme" %}{% set ph_cta_href = "/admision/" %}{% set ph_ghost_text = "Consultar" %}{% set ph_ghost_href = "/contacto/" %}
+  {% set ph_eyebrow = "FICHA · " ~ (programa.id | upper) %}{% set ph_card_tag = "[" ~ ("2 AÑOS" if programa.nivel == "carrera-tecnica" else "1 AÑO") ~ "]" %}{% set ph_card_title = programa.nombre %}{% set ph_card_desc = "Presencial · certificación a nombre de la Nación." %}{% set ph_title = programa.nombre %}{% set ph_lead = ("Carrera técnica · " ~ programa.duracion ~ " · Título de técnico a nombre de la Nación") if programa.nivel == "carrera-tecnica" else ("Auxiliar técnico · " ~ programa.duracion ~ " · Certificado de auxiliar técnico") %}{% set ph_cta_text = "Quiero inscribirme" %}{% set ph_cta_href = "/admision/" %}{% set ph_ghost_text = "Consultar" %}{% set ph_ghost_href = "/contacto/" %}
   {% include "page-hero.njk" %}
   <div class="wrap">
 
