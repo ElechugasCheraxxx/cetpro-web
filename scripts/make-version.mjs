@@ -45,8 +45,9 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
     process.exit(1);
   }
   const commit = process.env.COMMIT ?? git('git rev-parse --short HEAD', 'nogit');
-  const build = process.env.BUILD ?? git('git rev-list --count HEAD', '0');
   const contentHash = hashDir(dist);
+  // build determinístico basado en el contenido, independiente de la profundidad del clone (p. ej. CI con depth=1)
+  const build = process.env.BUILD ?? `site-${contentHash.replace(/^sha256-/, '').slice(0, 7)}`;
   const v = buildVersion({ build, commit, now: new Date(), contentHash });
   writeFileSync(join(dist, 'version.json'), JSON.stringify(v, null, 2));
   console.log(JSON.stringify(v, null, 2));
