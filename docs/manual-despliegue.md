@@ -4,10 +4,15 @@ Audiencia: equipo del proyecto + docente evaluador. Para demo de mantenimiento.
 
 ## 1. Requisitos
 
-- Cuenta de GitHub con acceso al repositorio `cetprosanluis/cem` (fork → rama → PR).
-- `main` protegida con checks obligatorios; CODEOWNERS exige segundo revisor sobre `/src/_data/`.
-- Secrets (solo CI): `CF_API_TOKEN` (Pages:Edit), `CF_ACCOUNT_ID`. **Nunca** en archivos.
-- [Wrangler] CLI (opcional local): `npm i -g wrangler`.
+- Cuenta de GitHub con acceso al repositorio `cetpro-web` (PR → rama → merge).
+- `main` protegida (PR requerido; cuenta única → 0 aprobadores forzados; sin force-push; enforce admins). CODEOWNERS de guía.
+- Secrets del repo (Settings → Secrets and variables → Actions):
+  - `CF_API_TOKEN` — token con permiso **Cloudflare Pages:Edit** y **Account: Read** (crear en https://dash.cloudflare.com/profile/api-tokens).
+  - `CF_ACCOUNT_ID` — Account ID (panel derecho del dashboard, "Account ID").
+- Variable del repo: `DEPLOY_PAGES` (Settings → Variables): por defecto `false`; al poner `true` el job `deploy` publicará en Pages con cada merge a `main`.
+- Proyecto en Pages: `<proyecto>.pages.dev` creado en el panel (Pages → Create a project → Connect to Git → `cetpro-web`, build command `npm run build`, output `dist`).
+
+Sin secrets, el CI corre igual pero el job de deploy se salta (CI verde por defecto); con secrets + variable, publica.
 
 ## 2. Flujo de una actualización
 

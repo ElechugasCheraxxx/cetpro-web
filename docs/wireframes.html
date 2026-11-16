@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Wireframes — CETPRO San Luis (bajos recursos)</title>
+<style>
+  body { font-family: system-ui, sans-serif; background:#f5f7fa; color:#222; margin:0; padding:2rem; }
+  h1 { color:#0b3d6e; }
+  .grid { display:grid; grid-template-columns: 1fr 1fr; gap:2rem; }
+  .wf { background:#fff; border:1px solid #d7e0ec; border-radius:12px; padding:1rem; }
+  .wf h2 { color:#0b3d6e; font-size:1.1rem; margin:.2rem 0 1rem; border-bottom:2px solid #f4c20d; padding-bottom:.3rem; }
+  svg { width:100%; height:auto; display:block; }
+  .caption { color:#4a5568; font-size:.85rem; margin-top:.5rem; }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<h1>Wireframes — CETPRO San Luis (mobile-first)</h1>
+<p class="caption">Vista de baja fidelidad (E-3.1) — 15/11/2026 · Ejecución académica · fuente de los contenidos: /oferta-formativa/ (prensa pública). Valence para validación de layout y prioridades, no de diseño final.</p>
+
+<div class="grid">
+  <figure class="wf"><h2>1 · Inicio (móvil)</h2>
+    <svg viewBox="0 0 300 520" role="img" aria-label="Wireframe Inicio móvil">
+      <rect x="10" y="10" width="280" height="500" fill="#fff" stroke="#333"/>
+      <rect x="10" y="10" width="280" height="56" fill="#0b3d6e"/>
+      <rect x="22" y="28" width="90" height="12" fill="#fff"/>
+      <rect x="246" y="26" width="24" height="18" fill="none" stroke="#fff"/>
+      <rect x="30" y="86" width="240" height="20" fill="#0b3d6e"/>
+      <rect x="30" y="112" width="180" height="10" fill="#333"/>
+      <rect x="30" y="128" width="140" height="10" fill="#333"/>
+      <rect x="30" y="152" width="110" height="26" fill="#f4c20d" stroke="#333"/>
+      <rect x="30" y="192" width="240" height="52" fill="none" stroke="#333" stroke-dasharray="4 3"/>
+      <rect x="30" y="252" width="240" height="52" fill="none" stroke="#333" stroke-dasharray="4 3"/>
+      <rect x="30" y="312" width="240" height="52" fill="none" stroke="#333" stroke-dasharray="4 3"/>
+      <rect x="30" y="444" width="240" height="52" fill="#072a4c"/>
+      <rect x="40" y="460" width="100" height="12" fill="#fff"/>
+    </svg>
+    <figcaption class="caption">Hero con CTA · 3 tarjetas destacadas (oferta / turnos / servicios) · bloqueo NAP+dirección al pie.</figcaption>
+  </figure>
+
+  <figure class="wf"><h2>2 · Oferta formativa (móvil)</h2>
+    <svg viewBox="0 0 300 520" role="img" aria-label="Wireframe Oferta formativa móvil">
+      <rect x="10" y="10" width="280" height="500" fill="#fff" stroke="#333"/>
+      <rect x="10" y="10" width="280" height="56" fill="#0b3d6e"/>
+      <rect x="30" y="86" width="200" height="18" fill="#0b3d6e"/>
+      <rect x="30" y="116" width="240" height="30" fill="#fff8d6" stroke="#f4c20d"/>
+      <rect x="30" y="156" width="240" height="44" fill="#f2f6fc" stroke="#333"/>
+      <rect x="30" y="208" width="240" height="44" fill="#f2f6fc" stroke="#333"/>
+      <rect x="30" y="260" width="240" height="44" fill="#f2f6fc" stroke="#333"/>
+      <rect x="30" y="312" width="240" height="44" fill="#f2f6fc" stroke="#333"/>
+      <rect x="30" y="364" width="240" height="44" fill="#f2f6fc" stroke="#333"/>
+      <rect x="30" y="416" width="240" height="44" fill="#f2f6fc" stroke="#333"/>
+    </svg>
+    <figcaption class="caption">Aviso «fuente pública» · 6 carreras técnicas + 6 auxiliares (tarjetas) · ficha por programa.</figcaption>
+  </figure>
+
+  <figure class="wf"><h2>3 · Admisión (móvil)</h2>
+    <svg viewBox="0 0 300 520" role="img" aria-label="Wireframe Admisión móvil">
+      <rect x="10" y="10" width="280" height="500" fill="#fff" stroke="#333"/>
+      <rect x="10" y="10" width="280" height="56" fill="#0b3d6e"/>
+      <rect x="30" y="86" width="180" height="20" fill="#0b3d6e"/>
+      <rect x="30" y="120" width="240" height="60" fill="#f2f6fc" stroke="#333"/>
+      <rect x="44" y="128" width="30" height="12" fill="#333"/><rect x="44" y="146" width="160" height="6" fill="#333"/>
+      <rect x="30" y="192" width="240" height="70" fill="#f2f6fc" stroke="#333"/>
+      <rect x="44" y="200" width="30" height="12" fill="#333"/><rect x="44" y="218" width="160" height="6" fill="#333"/><rect x="44" y="230" width="160" height="6" fill="#333"/>
+      <rect x="30" y="280" width="240" height="70" fill="#f2f6fc" stroke="#333"/>
+      <rect x="44" y="288" width="30" height="12" fill="#333"/><rect x="44" y="306" width="160" height="6" fill="#333"/><rect x="44" y="318" width="160" height="6" fill="#333"/><rect x="44" y="330" width="160" height="6" fill="#333"/>
+      <rect x="30" y="364" width="240" height="56" fill="#fff8d6" stroke="#f4c20d"/>
+      <rect x="40" y="388" width="160" height="8" fill="#333"/>
+    </svg>
+    <figcaption class="caption">Requisitos → documentos → pasos → aviso fechas (no inventadas).</figcaption>
+  </figure>
+
+  <figure class="wf"><h2>4 · Contacto (escritorio)</h2>
+    <svg viewBox="0 0 400 300" role="img" aria-label="Wireframe Contacto escritorio">
+      <rect x="10" y="10" width="380" height="280" fill="#fff" stroke="#333"/>
+      <rect x="10" y="10" width="380" height="40" fill="#0b3d6e"/>
+      <rect x="40" y="70" width="140" height="16" fill="#0b3d6e"/>
+      <rect x="40" y="100" width="320" height="10" fill="#333"/>
+      <rect x="40" y="114" width="320" height="10" fill="#333"/>
+      <rect x="40" y="128" width="320" height="10" fill="#333"/>
+      <rect x="40" y="142" width="320" height="10" fill="#333"/>
+      <rect x="40" y="170" width="110" height="24" fill="#f4c20d" stroke="#333"/>
+      <rect x="170" y="170" width="110" height="24" fill="#072a4c"/>
+    </svg>
+    <figcaption class="caption">NAP + mapa (enlace a Google Maps) + redes. Comunica 323-3342 destacado.</figcaption>
+  </figure>
+</div>
+</body>
+</html>
