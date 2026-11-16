@@ -1,20 +1,51 @@
 /* CETPRO San Luis — CSS propio, sin frameworks. Móvil primero. WCAG 2.1 AA.
-   Tokens: --ease-out, --ease-in-out, --ease-drawer. Filosofía: feedback
-   instantáneo al tocar (lentitud cero). Contenido primero; motion solo cuando
-   aporta (ver docs/design-system.md para la política de animación). */
+   Tokens basados en el Design System persistido en
+   design-system/cetpro-san-luis/MASTER.md (UI/UX Pro Max skill):
+   paleta accesible para instituciones públicas y tipografía Atkinson Hyperlegible
+   (auto-hospedada para no depender de CDNs externos). */
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/AtkinsonHyperlegible-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/AtkinsonHyperlegible-BoldItalic.woff2') format('woff2');
+}
+
 :root {
-  /* color */
-  --color-primary: #0b3d6e;
-  --color-primary-dark: #072a4c;
-  --color-accent: #f4c20d;
-  --color-accent-dark: #c99b00;
-  --color-text: #1a1a1a;
-  --color-muted: #4a5568;
-  --color-bg: #ffffff;
-  --color-surface: #f2f6fc;
-  --color-border: #d7e0ec;
+  /* color — paleta accesible para instituciones públicas (MASTER.md) */
+  --color-primary: #0F172A;
+  --color-primary-dark: #020617;
+  --color-accent: #0369A1;
+  --color-accent-dark: #075279;
+  --color-text: #020617;
+  --color-muted: #475569;
+  --color-bg: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-ring: #0F172A;
   /* type scale */
-  --font: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font: 'Atkinson Hyperlegible', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   /* motion */
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
@@ -97,7 +128,7 @@ main section, main article { padding: 1.5rem 0; }
 
 /* ---- hero ---- */
 .hero {
-  background: linear-gradient(160deg, var(--color-primary-dark) 0%, var(--color-primary) 55%, #1d5f9f 100%);
+  background: linear-gradient(160deg, var(--color-primary-dark) 0%, var(--color-primary) 55%, var(--color-accent) 100%);
   color: #fff; padding: 2.5rem 0 3rem; border-bottom: 4px solid var(--color-accent);
 }
 .hero h1 { font-size: clamp(1.8rem, 4.2vw, 2.7rem); line-height: 1.12; letter-spacing: -0.02em; margin: .2rem 0 .8rem; color: #fff; }
@@ -158,12 +189,12 @@ thead th { background: var(--color-surface); letter-spacing: .03em; text-transfo
 .list-check li::before { content: "✔ "; color: var(--color-primary); font-weight: 900; }
 code { background: #e8edf5; padding: .1em .35em; border-radius: 4px; font-size: .95em; }
 
-/* ---- reveal on view (IntersectionObserver + CSS transition) ---- */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 500ms var(--ease-out), transform 500ms var(--ease-out); will-change: transform, opacity; }
-.reveal.is-visible { opacity: 1; transform: translateY(0); }
-.reveal:nth-child(2) { transition-delay: 60ms; }
-.reveal:nth-child(3) { transition-delay: 120ms; }
-.reveal:nth-child(4) { transition-delay: 180ms; }
+/* ---- entrada sutil (solo opacidad; sin translate; muestra contenido) ---- */
+@keyframes reveal-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.reveal { animation: reveal-in 240ms var(--ease-out) both; }
 
 /* ---- footer ---- */
 .site-footer {
@@ -206,7 +237,7 @@ code { background: #e8edf5; padding: .1em .35em; border-radius: 4px; font-size: 
     transition-duration: 160ms !important;
     scroll-behavior: auto !important;
   }
-  .reveal { transform: none; transition: opacity 160ms var(--ease-out); }
+  .reveal { animation: none; }
 }
 
 /* ---- hover end (líneas abajo del viewport) ---- */
