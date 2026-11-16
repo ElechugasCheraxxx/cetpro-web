@@ -2,6 +2,8 @@
 
 Audiencia: equipo del proyecto + docente evaluador. Para demo de mantenimiento.
 
+**En vivo (16/11/2026):** https://cetpro.pages.dev/ · Release actual: `site-1` (dist.zip idéntico al contenido en Pages; `contentHash=sha256-fc2e10c199783537dcda225aa43417ca5fbafe68a3003e85ca670ed5cae72470`). Sincronizar el espejo IIS: `Sync-Site.ps1 -ReleaseBaseUrl https://github.com/ElechugasCheraxxx/cetpro-web/releases/latest/download` · verificar `/version.json` local vs Pages (`site-fc2e10c` / `590b602`).
+
 ## 1. Requisitos
 
 - Cuenta de GitHub con acceso al repositorio `cetpro-web` (PR → rama → merge).
