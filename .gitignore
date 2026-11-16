@@ -5,3 +5,5 @@ dist/
 *.log
 evidencias/
 .DS_Store
+
+.lighthouseci/
