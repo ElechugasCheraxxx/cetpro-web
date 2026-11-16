@@ -7,210 +7,126 @@
 ---
 
 **Project:** CETPRO San Luis
-**Generated:** 2026-11-16 02:03:58
+**Generated:** 2026-11-16 02:03:58 · **Revisado:** 2026-11-16 (v3 · "Plano de taller")
 **Category:** Government/Public Service
 
 ---
 
-## Global Rules
+## Global Rules (v3 — vigente desde 16/11/2026)
+
+### Dirección de arte
+
+*Manual técnico de un taller público*: papel de plano, tinta, planchas verdes profundas, naranja de señal y hazard. Marcos de imprenta con desfase duro. Nada de degradados, sombras suaves ni tarjetas redondeadas genéricas. Anton (display) + Atkinson Hyperlegible (cuerpo) + IBM Plex Mono (anotaciones). Índices de plano `§ NN` por sección; oferta formativa como índice de catálogo (`C-NN`, `A-NN`); wordmark Anton de colofón.
 
 ### Color Palette
 
 | Role | Hex | CSS Variable |
 |------|-----|--------------|
-| Primary | `#0F172A` | `--color-primary` |
-| On Primary | `#FFFFFF` | `--color-on-primary` |
-| Secondary | `#334155` | `--color-secondary` |
-| On Secondary | `#FFFFFF` | `--color-on-secondary` |
-| Accent/CTA | `#0369A1` | `--color-accent` |
-| On Accent/CTA | `#FFFFFF` | `--color-on-accent` |
-| Background | `#F8FAFC` | `--color-background` |
-| Foreground | `#020617` | `--color-foreground` |
-| Card | `#FFFFFF` | `--color-card` |
-| Card Foreground | `#020617` | `--color-card-foreground` |
-| Muted | `#E8ECF1` | `--color-muted` |
-| Muted Foreground | `#475569` | `--color-muted-foreground` |
-| Border | `#E2E8F0` | `--color-border` |
-| Destructive | `#DC2626` | `--color-destructive` |
-| On Destructive | `#FFFFFF` | `--color-on-destructive` |
-| Ring | `#0F172A` | `--color-ring` |
+| Paper | `#ECEEE7` | `--paper` |
+| Surface (fichas) | `#FDFCF6` | `--surface` |
+| Ink (texto/filetes) | `#16150F` | `--ink` |
+| Deep (planchas) | `#0E3B2C` | `--deep` |
+| Deep Ink (drawer móvil) | `#0A2A20` | `--deep-ink` |
+| Rust (enlaces/índices) | `#9A3412` | `--rust` |
+| Orange (acento NO texto) | `#C2410C` | `--orange` |
+| Hazard (CTA tinta/friso/sello) | `#F2C230` | `--hazard` |
+| Muted | `#57534A` | `--muted` |
+| Border suave | `#D3D6CB` | `--line-soft` |
+| Destructive | `#DC2626` | `--color-destructive` (utilidad `.btn.danger`) |
+| Ring (focus) | `#16150F` (papel) / `#F2C230` (quemado/oscuro) | `--color-ring` |
 
-**Color Notes:** High contrast navy + blue
+**Color Notes:** contrastes medidos — ink/paper 13.4:1 · rust/paper 6.4:1 · paper/deep 10.4:1 · ink/hazard 10.9:1 · muted/paper 6.7:1. El naranja `#C2410C` no se usa para texto de cuerpo.
 
-### Typography
+### Tipografía
 
-- **Heading Font:** Atkinson Hyperlegible
-- **Body Font:** Atkinson Hyperlegible
-- **Mood:** accessible, readable, inclusive, WCAG, dyslexia-friendly, clear
-- **Google Fonts:** [Atkinson Hyperlegible + Atkinson Hyperlegible](https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap)
+- **Display:** Anton 400, mayúsculas, tracking ≈ 0.01em (hero `clamp(2.05, 4.6vw, 3.4rem)`, `h1`, `h2`, wordmark).
+- **Body:** Atkinson Hyperlegible 400/700/italic — heredada de v2 por motivos de legibilidad (Braille Institute).
+- **Mono:** IBM Plex Mono 400/500 — índices (`§`, `C-01`), tags, captions (`FIG. 01 — …`), navegación, metadatos.
+- Medida: `p, li { max-width: 56ch; text-wrap: pretty }`.
 
-**CSS Import:**
-```css
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap');
-```
-
-### Spacing Variables
+### Spacing & Radii
 
 | Token | Value | Usage |
 |-------|-------|-------|
-| `--space-xs` | `4px` / `0.25rem` | Tight gaps |
-| `--space-sm` | `8px` / `0.5rem` | Icon gaps, inline spacing |
-| `--space-md` | `16px` / `1rem` | Standard padding |
-| `--space-lg` | `24px` / `1.5rem` | Section padding |
-| `--space-xl` | `32px` / `2rem` | Large gaps |
-| `--space-2xl` | `48px` / `3rem` | Section margins |
-| `--space-3xl` | `64px` / `4rem` | Hero padding |
+| `--space-xs` | `0.25rem` | Gaps mínimos |
+| `--space-sm` | `0.5rem` | Gaps inline |
+| `--space-md` | `1rem` | Padding estándar |
+| `--space-lg` | `1.5rem` | Padding de sección |
+| `--space-2xl` | `3rem` | Márgenes de héroe |
+| `--radius` | `2px` | Esquinas duras (imprenta) |
 
-### Shadow Depths
+### Sombras (solo desfase duro, nunca suavizadas)
 
 | Level | Value | Usage |
 |-------|-------|-------|
-| `--shadow-sm` | `0 1px 2px rgba(0,0,0,0.05)` | Subtle lift |
-| `--shadow-md` | `0 4px 6px rgba(0,0,0,0.1)` | Cards, buttons |
-| `--shadow-lg` | `0 10px 15px rgba(0,0,0,0.1)` | Modals, dropdowns |
-| `--shadow-xl` | `0 20px 25px rgba(0,0,0,0.15)` | Hero images, featured cards |
+| `--offset-sm` | `5px 5px 0 var(--ink)` | Botones, fichas hover |
+| `--offset-md` | `6px 6px 0 var(--ink)` | Cards hover |
+| `--offset-photo` | `10px 10px 0 var(--orange)` ó `0 var(--ink)` | Marcos de foto |
+| `--offset-hero` | `14px 14px 0 var(--orange)` | Figura hero |
 
 ---
 
 ## Component Specs
 
-### Buttons
+### Botones ("esmaltados" — tinta sobre hazard)
 
 ```css
-/* Primary Button */
-.btn-primary {
-  background: #0369A1;
-  color: #FFFFFF;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 200ms ease;
-  cursor: pointer;
+.btn { /* primario */
+  background: var(--hazard); color: var(--ink); border: 2px solid var(--ink);
+  font-family: var(--font-mono); font-weight: 500; letter-spacing: .06em; text-transform: uppercase;
+  padding: .8rem 1.35rem; border-radius: 2px; box-shadow: 5px 5px 0 var(--ink);
+  transition: transform 140ms, box-shadow 140ms;
 }
-
-.btn-primary:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* Secondary Button */
-.btn-secondary {
-  background: transparent;
-  color: #0F172A;
-  border: 2px solid #0F172A;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 200ms ease;
-  cursor: pointer;
-}
+.btn:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 var(--ink); }
 ```
 
-### Cards
+Secundarios: `.btn.secondary` (sobre plancha oscura), `.btn.secondary-light` (sobre papel, tinta). Todos: `cursor: pointer`, press 140ms, sin degradados.
 
-```css
-.card {
-  background: #F8FAFC;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: var(--shadow-md);
-  transition: all 200ms ease;
-  cursor: pointer;
-}
+### Cards (fichas de catálogo)
 
-.card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
-}
-```
+Marco `2px solid var(--ink)`, fondo `--surface`, radio 2px. Índice mono `decimal-leading-zero` generado por CSS counters (`counter-reset: card` en `.cards`), esquina superior derecha en `--rust`. Hover: `translate(-2px,-2px)` + offset 6px tinta.
 
-### Inputs
+### Tablas (ledger)
 
-```css
-.input {
-  padding: 12px 16px;
-  border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 200ms ease;
-}
+`thead` tinta + papel (mono uppercase), `tbody` zebra `#EDE9DC`, `td:last-child { font-variant-numeric: tabular-nums }`, filetes superiores/inferiores de tinta.
 
-.input:focus {
-  border-color: #0F172A;
-  outline: none;
-  box-shadow: 0 0 0 3px #0F172A20;
-}
-```
+### Avisos (`.notice`)
 
-### Modals
-
-```css
-.modal-overlay {
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-}
-
-.modal {
-  background: white;
-  border-radius: 16px;
-  padding: 32px;
-  box-shadow: var(--shadow-xl);
-  max-width: 500px;
-  width: 90%;
-}
-```
+Marco tinta uniforme; etiqueta negativa "NOTA DE TALLER" (mono sobre `--ink` con texto hazard) montada en el borde superior. Sin side-tabs.
 
 ---
 
 ## Style Guidelines
 
-**Style:** Accessible & Ethical
+**Style:** Plano de taller (v3)
 
-**Keywords:** Accessible, inclusive interface, high contrast, large text (16px+), keyboard navigation, screen reader friendly, accessibility standards aware, focus state, semantic
+**Mood:** oficio · obra · pública · impresa · accesible
 
-**Best For:** Government, healthcare, education, inclusive products, large audience, legal compliance, public
+**Best For:** instituciones públicas con oficio propio (CETPRO, talleres, escuelas técnicas)
 
-**Key Effects:** Clear focus rings (3-4px), ARIA labels, skip links, responsive design, reduced motion, 44x44px touch targets
+**Key Effects:** desfases duros de imprenta, índices mono `§`, dot field milimetrado en héroe, sello Anton/Plex ("60+ AÑOS"), palabra señal en óxido, friso hazard único por página, focus-visible 3px de alto contraste.
 
-### Page Pattern
+### Prohibidos (v3)
 
-**Pattern Name:** Minimal Single Column
-
-- **Conversion Strategy:** Single CTA focus. Large typography. Lots of whitespace. No nav clutter. Mobile-first.
-- **CTA Placement:** Center, large CTA button
-- **Section Order:** Hero headline > Short description > Benefit bullets (3 max) > CTA > Footer
-
----
-
-## Anti-Patterns (Do NOT Use)
-
-- ❌ Ornate design
-- ❌ Low contrast
-- ❌ Motion effects
-- ❌ AI purple/pink gradients
-
-### Additional Forbidden Patterns
-
-- ❌ **Emojis as icons** — Use SVG icons (Heroicons, Lucide, Simple Icons)
-- ❌ **Missing cursor:pointer** — All clickable elements must have cursor:pointer
-- ❌ **Layout-shifting hovers** — Avoid scale transforms that shift layout
-- ❌ **Low contrast text** — Maintain 4.5:1 minimum contrast ratio
-- ❌ **Instant state changes** — Always use transitions (150-300ms)
-- ❌ **Invisible focus states** — Focus states must be visible for a11y
+- ❌ Gradientes de fondo en héroe o CTAs (incluido el "gradient on section")
+- ❌ Sombras suaves/difusas y blur en CTAs
+- ❌ Side-tabs en avisos y cards
+- ❌ Kickers/eyebrows pequeños sobre el H1
+- ❌ Naranja como texto de cuerpo (usar óxido)
+- ❌ Fondos crema planos "cálidos por defecto" (el papel es gris verdoso frío)
+- ❌ Emojis como iconos
+- ❌ Texto < 11px en controles/labels
 
 ---
 
 ## Pre-Delivery Checklist
 
-Before delivering any UI code, verify:
-
-- [ ] No emojis used as icons (use SVG instead)
-- [ ] All icons from consistent icon set (Heroicons/Lucide)
-- [ ] `cursor-pointer` on all clickable elements
-- [ ] Hover states with smooth transitions (150-300ms)
-- [ ] Light mode: text contrast 4.5:1 minimum
-- [ ] Focus states visible for keyboard navigation
-- [ ] `prefers-reduced-motion` respected
-- [ ] Responsive: 375px, 768px, 1024px, 1440px
-- [ ] No content hidden behind fixed navbars
-- [ ] No horizontal scroll on mobile
+- [ ] No emojis como iconos (SVG propio)
+- [ ] `cursor: pointer` en todo clickable
+- [ ] Hover 140–160ms con ease-out; nada de cambios instantáneos
+- [ ] Contraste cuerpo ≥ 4.5:1 (medido por par; ver tabla)
+- [ ] Focus visible de alto contraste (3px `--ink` sobre papel / 3px hazard sobre tinta)
+- [ ] `prefers-reduced-motion` respetado
+- [ ] Wordmark del pie con `<br>` explícito (nunca nowrap forzado)
+- [ ] Sin scroll horizontal a 375px (verificado a 500px headless + 375/768/1024/1440 lógicos)
+- [ ] Medida ≤ 56ch en cuerpo

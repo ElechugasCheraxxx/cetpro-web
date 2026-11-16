@@ -6,69 +6,77 @@ pageH1: Formación técnica gratuita, práctica y con certificación a nombre de
 pageLead: "Centro de Educación Técnico-Productiva San Luis: más de 60 años formando técnicos en el distrito de San Luis. Matrícula abierta para jóvenes y adultos desde los 14 años."
 ---
 
-<section class="hero split">
+<section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <h1>{{ pageH1 }}</h1>
+      <h1>Formación técnica <span class="accent">gratuita</span>, práctica y con certificación a nombre de la Nación</h1>
       <p class="lead">{{ pageLead }}</p>
-      <p>
-        <a class="btn" href="/admision/">Quiero estudiar</a>
-        <a class="btn secondary" href="/oferta-formativa/">Ver oferta formativa</a>
+      <p class="hero-cta">
+        <a class="btn" href="/admision/">Quiero estudiar →</a>
+        <a class="btn secondary-light" href="/oferta-formativa/">Ver oferta</a>
       </p>
-      <p class="hero-note">Fuente: fuentes públicas citadas (UGEL 07, Agencia Andina). Este sitio es un proyecto institucional informativo; los datos oficiales vigentes se confirman con la Dirección del CETPRO.</p>
+      <p class="spec-foot">FUENTE: UGEL 07 · AGENCIA ANDINA (08/12/2025) · Términos citados, no oficiales. Este sitio es informativo; los datos vigentes se confirman con la Dirección del CETPRO.</p>
     </div>
     <figure class="hero-media parallax">
       <img src="/assets/img/workshop.jpg" width="1125" height="750" alt="Estudiantes del CETPRO San Luis trabajando en un taller de electrónica: conectando componentes en una placa en vivo (imagen de referencia, Pexels)" fetchpriority="high" decoding="async">
-      <figcaption class="hero-media-caption">Taller de electrónica del CETPRO · Fotografía de referencia (Pexels, licencia gratuita; reemplazar por fotografía institucional propia)</figcaption>
+      <svg class="stamp" viewBox="0 0 120 120" role="img" aria-label="Sello: más de 60 años formando técnicos, certificación a nombre de la Nación">
+        <circle cx="60" cy="60" r="57" fill="#F2C230" stroke="#16150F" stroke-width="4.5"/>
+        <circle cx="60" cy="60" r="43" fill="none" stroke="#16150F" stroke-width="2.6"/>
+        <text x="60" y="58" text-anchor="middle" font-family="'Anton', sans-serif" font-size="33" fill="#16150F">60+</text>
+        <text x="60" y="82" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-weight="500" font-size="12.5" letter-spacing="3.4" fill="#16150F">AÑOS</text>
+      </svg>
+      <figcaption class="hero-media-caption">FIG. 01 — TALLER DE ELECTRÓNICA · FOTO REFERENCIAL (PEXELS)</figcaption>
     </figure>
   </div>
 </section>
+<div class="hazard-bar"></div>
 
 <section class="wrap" aria-labelledby="talleres">
-  <h2 id="talleres" class="section-title">En los talleres</h2>
+  <div class="spec-head"><span class="spec-num">§ 01</span><h2 id="talleres" class="section-title">En los talleres</h2></div>
   <p class="muted">Imágenes de referencia de <a href="https://www.pexels.com/license/" rel="noopener" target="_blank">Pexels</a> (licencia gratuita, sin atribución obligatoria). Serán reemplazadas por fotografías institucionales del CETPRO cuando la institución las apruebe.</p>
 
   <div class="gallery">
     <figure class="gallery-item">
       <div class="parallax-wrap"><img class="parallax" src="/assets/img/culinary-kitchen.jpg" alt="Estudiantes de culinaria del CETPRO trabajando en una cocina profesional de formación (imagen de referencia, Pexels)" width="1125" height="750" loading="eager" decoding="async"></div>
-      <figcaption class="card-caption">Taller de culinaria y cocina · cocina profesional en formación (Pexels)</figcaption>
+      <figcaption class="card-caption fig-cap">FIG. 02 — TALLER DE CULINARIA · COCINA PROFESIONAL EN FORMACIÓN (PEXELS)</figcaption>
     </figure>
     <figure class="gallery-item">
       <div class="parallax-wrap"><img class="parallax" src="/assets/img/sewing-class.jpg" alt="Estudiante del CETPRO usando una máquina de coser en la clase de textil y confección (imagen de referencia, Pexels)" width="1125" height="750" loading="eager" decoding="async"></div>
-      <figcaption class="card-caption">Taller de textil y confección · máquina de coser en clase (Pexels)</figcaption>
+      <figcaption class="card-caption fig-cap">FIG. 03 — TALLER DE TEXTIL Y CONFECCIÓN · MÁQUINA DE COSER EN CLASE (PEXELS)</figcaption>
     </figure>
   </div>
 </section>
 
 <section class="wrap" aria-labelledby="oferta-destacada">
-  <h2 id="oferta-destacada" class="section-title">Oferta formativa</h2>
+  <div class="spec-head"><span class="spec-num">§ 02</span><h2 id="oferta-destacada" class="section-title">Oferta formativa</h2></div>
   <p class="muted">6 carreras técnicas (2 años) · 6 programas de auxiliar técnico (1 año) — según fuentes públicas (Agencia Andina, 08/12/2025).</p>
   <div class="cards">
     {% for a in areas.items | limit(6) %}
     <article class="card reveal">
-      <span class="tag">{{ 'Carrera técnica' if a.nivel == 'carrera-tecnica' else 'Auxiliar técnico' }}</span>
+      <span class="tag{% if a.nivel == 'auxiliar-tecnico' %} alt{% endif %}">{{ 'Carrera técnica' if a.nivel == 'carrera-tecnica' else 'Auxiliar técnico' }}</span>
       <h3>{{ a.nombre }}</h3>
       <p class="muted small">{{ a.duracion }}</p>
       <p><a href="/oferta-formativa/{{ a.id }}/">Ver ficha →</a></p>
     </article>
     {% endfor %}
   </div>
-  <p><a class="btn" href="/oferta-formativa/">Ver todas las 12 especialidades</a></p>
+  <p class="cta-row"><a class="btn" href="/oferta-formativa/">Ver las 12 especialidades →</a></p>
 </section>
 
 <section class="wrap" aria-labelledby="por-que">
+  <div class="spec-head"><span class="spec-num">§ 03</span><h2 id="por-que" class="section-title">Por qué aquí</h2></div>
   <div class="cards">
-    <div class="card reveal"><h2 id="por-que">Gratuito</h2><p>La formación técnica en CETPRO públicos es gratuita y no hay examen de admisión: máximo esfuerzo práctico (80 % práctica) y certificación a nombre de la Nación.</p></div>
-    <div class="card reveal"><h2>3 turnos</h2><p>Mañana, tarde y noche: compatibiliza tus estudios con tu trabajo o familia.</p></div>
-    <div class="card reveal"><h2>14+</h2><p>Sin límite de edad. Adolescentes desde los 14 años y adultos, incluidos adultos mayores.</p></div>
-    <div class="card reveal"><h2>Inclusivo</h2><p>Comunidad con ~15 estudiantes con discapacidad; institución comprometida con la inclusión.</p></div>
+    <div class="card reveal"><h3>Gratuito</h3><p>La formación técnica en CETPRO públicos es gratuita y no hay examen de admisión: máximo esfuerzo práctico (80 % práctica) y certificación a nombre de la Nación.</p></div>
+    <div class="card reveal"><h3>3 turnos</h3><p>Mañana, tarde y noche: compatibiliza tus estudios con tu trabajo o familia.</p></div>
+    <div class="card reveal"><h3>14+</h3><p>Sin límite de edad. Adolescentes desde los 14 años y adultos, incluidos adultos mayores.</p></div>
+    <div class="card reveal"><h3>Inclusivo</h3><p>Comunidad con ~15 estudiantes con discapacidad; institución comprometida con la inclusión.</p></div>
   </div>
 </section>
 
 <section class="wrap" aria-labelledby="instalacion">
-  <h2 id="instalacion" class="section-title">¿Dónde está?</h2>
+  <div class="spec-head"><span class="spec-num">§ 04</span><h2 id="instalacion" class="section-title">¿Dónde está?</h2></div>
   <p>Jr. Cabo Yen Escobedo Garro N.° 381, Urb. La Viña — distrito de San Luis, Lima. Cruce de Av. Del Aire y Av. Rosa Toro.</p>
-  <p><a class="btn" href="https://www.google.com/maps/search/Jr.+Yen+Escobedo+381+San+Luis+Lima" rel="noopener" target="_blank">Abrir en Google Maps</a></p>
+  <p><a class="btn" href="https://www.google.com/maps/search/Jr.+Yen+Escobedo+381+San+Luis+Lima" rel="noopener" target="_blank">Abrir en Google Maps →</a></p>
 </section>
 
 <script type="application/ld+json">

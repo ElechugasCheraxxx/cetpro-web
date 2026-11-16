@@ -9,32 +9,32 @@ description: 6 carreras técnicas (2 años) y 6 programas de auxiliar técnico (
   <div class="offer-hero">
     <img class="parallax" src="/assets/img/culinary-kitchen.jpg" width="1125" height="750" alt="Estudiantes trabajando en el taller de cocina (imagen de referencia, Pexels)" loading="eager" decoding="async">
   </div>
-  <p class="lead">Formación en 6 carreras técnicas y 6 programas de auxiliar técnico.</p>
+  <p class="lead">Formación en 6 carreras técnicas y 6 programas de auxiliar técnico. Gratuito, presencial, con certificación a nombre de la Nación.</p>
   <div class="notice">
     <p><strong>Fuente de los datos:</strong> Agencia Andina (08/12/2025, citando a la directora del CETPRO) y UGEL 07 (30/04/2026). Esta información es pública y difundida oficialmente, pero este sitio es informativo y académico: los nombres vigentes de los programas se confirman con la institución. No publicamos perfiles, capacidades ni módulos sin fuente oficial documentada.</p>
   </div>
 
-  <h2>Carreras técnicas <span class="small muted">(duración: 2 años)</span></h2>
-  <div class="cards">
+  <h2>Carreras técnicas <span class="h2-aside">// 2 años</span></h2>
+  <nav class="program-list carreras" aria-label="Carreras técnicas">
     {% for a in areas.items | filterBy('nivel', 'carrera-tecnica') %}
-    <article class="card reveal">
-      <h3>{{ a.nombre }}</h3>
-      <p class="muted small">{{ a.duracion }} · Títulos a nombre de la Nación</p>
-      <p><a href="/oferta-formativa/{{ a.id }}/">Ver ficha →</a></p>
-    </article>
+    <a class="program-row" href="/oferta-formativa/{{ a.id }}/">
+      <span class="program-name">{{ a.nombre }}</span>
+      <span class="program-meta">Título a nombre de la Nación</span>
+      <span class="program-arrow" aria-hidden="true">→</span>
+    </a>
     {% endfor %}
-  </div>
+  </nav>
 
-  <h2>Programas de auxiliar técnico <span class="small muted">(duración: 1 año)</span></h2>
-  <div class="cards">
+  <h2>Programas de auxiliar técnico <span class="h2-aside">// 1 año</span></h2>
+  <nav class="program-list auxiliares" aria-label="Programas de auxiliar técnico">
     {% for a in areas.items | filterBy('nivel', 'auxiliar-tecnico') %}
-    <article class="card reveal">
-      <h3>{{ a.nombre }}</h3>
-      <p class="muted small">{{ a.duracion }} · Certificado modular de auxiliar técnico</p>
-      <p><a href="/oferta-formativa/{{ a.id }}/">Ver ficha →</a></p>
-    </article>
+    <a class="program-row" href="/oferta-formativa/{{ a.id }}/">
+      <span class="program-name">{{ a.nombre }}</span>
+      <span class="program-meta">Certif. de auxiliar técnico</span>
+      <span class="program-arrow" aria-hidden="true">→</span>
+    </a>
     {% endfor %}
-  </div>
+  </nav>
 
   <p class="card-caption">Programas más solicitados según fuentes públicas: Estilismo, Panificación Industrial, Cocina, Computación (carrera solicitada por los postulantes, mencionada en prensa; su ubicación curricular se confirma con la institución) y Estampado de Prendas.</p>
 </article>
