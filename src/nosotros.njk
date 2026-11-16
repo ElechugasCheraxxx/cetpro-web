@@ -4,9 +4,10 @@ title: Nosotros
 description: Quiénes somos — Centro de Educación Técnico-Productiva San Luis, institución pública de formación técnica del distrito de San Luis, bajo la UGEL 07.
 ---
 
-<article class="wrap">
-  <h1>Nosotros</h1>
-  <p class="lead">Centro de Educación Técnico-Productiva San Luis — institución de formación técnico-productiva de gestión pública, adscrita a la UGEL 07 (DRE Lima Metropolitana).</p>
+<article>
+  {% set ph_eyebrow = "NOSOTROS · UGEL 07" %}{% set ph_card_tag = "[ 60+ AÑOS ]" %}{% set ph_card_title = "Más de 60 años de oficio" %}{% set ph_card_desc = "Trayectoria de formación técnica pública en el distrito de San Luis." %}{% set ph_title = "Nosotros" %}{% set ph_lead = "Centro de Educación Técnico-Productiva San Luis — institución de formación técnico-productiva de gestión pública, adscrita a la UGEL 07 (DRE Lima Metropolitana)." %}{% set ph_cta_text = "Conocer la oferta" %}{% set ph_cta_href = "/oferta-formativa/" %}
+  {% include "page-hero.njk" %}
+  <div class="wrap">
 
   <h2>Qué es un CETPRO</h2>
   <p>Los CETPRO son centros de educación técnico-productiva donde jóvenes y adultos aprenden un oficio con enfoque práctico y certificación oficial (títulos de auxiliar técnico y de técnico, reconocidos a nombre de la Nación).</p>
@@ -26,4 +27,5 @@ description: Quiénes somos — Centro de Educación Técnico-Productiva San Lui
     <li>Convenio Fundación Ayuda en Acción + Compartamos Financiera para 250 estudiantes (abril 2026).</li>
     <li>Donaciones de equipos y talleres con el programa «Abraza tu Cole» y empresas aliadas.</li>
   </ul>
+  </div>
 </article>

@@ -9,9 +9,10 @@ eleventyComputed:
   title: "{{ programa.nombre }}"
   description: "Ficha informativa de {{ programa.nombre }} — CETPRO San Luis."
 ---
-<article class="wrap">
-  <h1>{{ programa.nombre }}</h1>
-  <p class="lead">{% if programa.nivel == 'carrera-tecnica' %}Carrera técnica · {{ programa.duracion }} · Título de técnico a nombre de la Nación{% else %}Auxiliar técnico · {{ programa.duracion }} · Certificado de auxiliar técnico{% endif %}</p>
+<article>
+  {% set ph_eyebrow = "FICHA · {{ programa.id | upper }}" %}{% set ph_card_tag = "[" ~ ("2 AÑOS" if programa.nivel == "carrera-tecnica" else "1 AÑO") ~ "]" %}{% set ph_card_title = "{{ programa.nombre }}" %}{% set ph_card_desc = "Presencial · certificación a nombre de la Nación." %}{% set ph_title = "{{ programa.nombre }}" %}{% set ph_lead = "{% if programa.nivel == 'carrera-tecnica' %}Carrera técnica · {{ programa.duracion }} · Título de técnico a nombre de la Nación{% else %}Auxiliar técnico · {{ programa.duracion }} · Certificado de auxiliar técnico{% endif %}" %}{% set ph_cta_text = "Quiero inscribirme" %}{% set ph_cta_href = "/admision/" %}{% set ph_ghost_text = "Consultar" %}{% set ph_ghost_href = "/contacto/" %}
+  {% include "page-hero.njk" %}
+  <div class="wrap">
 
   <div class="notice">
     <p>Esta ficha es informativa y no reemplaza los documentos oficiales de la institución. Los perfiles, capacidades y módulos se publicarán cuando exista documentación oficial confirmable.</p>
@@ -32,5 +33,5 @@ eleventyComputed:
   </table>
 
   <p><a class="btn" href="/admision/">Quiero inscribirme</a> <a class="btn secondary-light" href="/contacto/">Consultar al CETPRO</a></p>
-
+  </div>
 </article>

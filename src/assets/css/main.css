@@ -555,3 +555,122 @@ code { background: #1A242C; color: var(--paper); padding: .1em .35em; border-rad
   .site-footer { background: var(--ink); }
   body { background: #FFFDF7; }
 }
+
+/* ==========================================================================
+   v4 — LENGUAJE DEL MOCKUP EN TODO EL SITIO
+   Banda hero por página, fichas de cristal líquido, CTAs píldora,
+   retícula + glow, tipografía display a escala. (2026-11-16)
+   ========================================================================== */
+
+/* lienzo: puntos + leve viñeta superior en todas las rutas */
+body {
+  background-image:
+    radial-gradient(rgba(255,255,255,.09) 1px, transparent 1.2px),
+    radial-gradient(1200px 620px at 78% -8%, rgba(20,83,45,.45), transparent 62%);
+  background-size: 26px 26px, 100% 100%;
+  background-attachment: fixed;
+}
+
+/* ---- banda hero de página ---- */
+.page-hero {
+  position: relative; overflow: hidden;
+  padding: clamp(3.2rem, 9vh, 6rem) 0 clamp(2.2rem, 5vh, 3.5rem);
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,.02), transparent 40%);
+}
+.ph-glow {
+  position: absolute; z-index: 0; top: -40px; right: -6%; width: min(60vw, 820px); height: 340px;
+  background: radial-gradient(closest-side, rgba(20,83,45,.55), transparent 70%);
+  filter: blur(25px); pointer-events: none;
+}
+.ph-lines { position: absolute; }
+.ph-inner { position: relative; z-index: 2; }
+.ph-eyebrow {
+  font-family: var(--font-mono); font-weight: 500; font-size: .76rem; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--hazard); margin: 0 0 1.4rem;
+}
+.ph-title {
+  font-size: clamp(2.9rem, 7.6vw, 5.2rem) !important; line-height: .92 !important;
+  letter-spacing: .005em; color: var(--paper); max-width: 16ch; text-wrap: balance;
+}
+.ph-lead { font-size: clamp(1.02rem, 1.6vw, 1.2rem); line-height: 1.6; color: rgba(245,241,234,.88); max-width: 60ch; margin: 1.1rem 0 0; }
+.ph-lead strong { color: var(--paper); }
+.ph-cta { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin: 1.6rem 0 0; }
+.ph-card {
+  width: auto; min-width: 220px; max-width: 340px; height: auto; min-height: 128px;
+  transform: translateY(-24px); margin: 0 0 -.2rem; border-radius: 18px;
+}
+
+/* ---- CTAs píldora (estilo mockup) en todo el sitio ---- */
+.btn {
+  border-radius: 999px; box-shadow: none; padding: .9rem 1.55rem;
+  transition: transform 150ms var(--ease-out), background-color 150ms var(--ease-hover), box-shadow 150ms var(--ease-out);
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(250,212,65,.28); background: var(--hazard-hot); }
+.btn:active { transform: translateY(0); }
+.btn.secondary-light { border-radius: 999px; box-shadow: none; padding: .85rem 1.45rem; }
+.btn.secondary-light:hover { box-shadow: 0 10px 26px rgba(245,241,234,.18); }
+.btn.danger { border-radius: 999px; }
+
+/* ---- fichas de cristal líquido ---- */
+.card {
+  border-radius: 18px; border: 0; padding: 1.5rem 1.4rem 1.3rem;
+  background: rgba(255,255,255,.02); background-blend-mode: luminosity;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.07);
+}
+.card::after {
+  content: ""; position: absolute; inset: 0; border-radius: 18px; padding: 1px; pointer-events: none;
+  background: linear-gradient(160deg, rgba(255,255,255,.34), rgba(255,255,255,.05) 42%, rgba(85,204,238,.22));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+.card:hover { box-shadow: 0 14px 34px rgba(0,0,0,.45), 6px 6px 0 var(--orange); }
+.card h3, .card h2 {
+  font-family: var(--font-display); font-weight: 400; text-transform: uppercase;
+  font-size: 1.32rem; line-height: 1.05; letter-spacing: .015em; color: var(--paper);
+}
+.tag { border-radius: 999px; padding: .28rem .8rem; }
+
+/* ---- avisos de taller: cristal con etiqueta ---- */
+.notice {
+  border-radius: 18px; border: 0;
+  background: rgba(255,255,255,.02); background-blend-mode: luminosity;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.07);
+}
+
+/* ---- tablas ledger oscuras ---- */
+table { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+thead th { background: rgba(255,255,255,.03); letter-spacing: .12em; }
+tbody tr:nth-child(even) { background: rgba(255,255,255,.03); }
+
+/* ---- listas de verificación y notas ---- */
+.list-check li::before { color: var(--hazard); }
+.card-caption { color: var(--muted); }
+
+/* ---- índice de catálogo (oferta) sobre plancha ---- */
+.program-row { border-radius: 14px; transition: background-color 140ms var(--ease-hover), transform 140ms var(--ease-out), box-shadow 140ms var(--ease-out); }
+.program-row:hover, .program-row:focus-visible { box-shadow: 6px 6px 0 var(--ink); transform: translate(-2px,-2px); }
+.program-idx { color: var(--rust); }
+.program-arrow { color: var(--hazard); }
+
+/* ---- marcos de imagen: desfase fucsia mayor ---- */
+.offer-hero, .parallax-wrap { border-radius: 18px; box-shadow: 16px 16px 0 var(--orange); }
+.offer-hero img, .parallax-wrap img { border-radius: 0; }
+.gallery-item .card-caption, .hero-media-caption { letter-spacing: .04em; }
+
+/* ---- cabeceras de sección ---- */
+.spec-head { border-bottom: 1px solid var(--line); }
+.spec-num { color: var(--hazard); letter-spacing: .14em; }
+.section-title { letter-spacing: .015em; }
+
+/* ---- listas y texto ---- */
+p { max-width: 56ch; }
+.lead { max-width: 56ch; }
+.muted { color: var(--muted); }
+
+/* ---- pie: más aire y colofón grande ---- */
+.footer-wordmark { font-size: clamp(2.6rem, 12vw, 7.4rem); }

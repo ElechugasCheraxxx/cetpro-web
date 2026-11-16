@@ -3,9 +3,10 @@ layout: base.njk
 title: Accesibilidad
 description: Declaración de accesibilidad del sitio del CETPRO San Luis — WCAG 2.1 nivel AA.
 ---
-<article class="wrap">
-  <h1>Accesibilidad</h1>
-  <p class="lead">El CETPRO San Luis busca que este sitio sea utilizable por todas las personas, en cualquier dispositivo y con cualquier tecnología de asistencia.</p>
+<article>
+  {% set ph_eyebrow = "ACCESIBILIDAD · WCAG 2.1 AA" %}{% set ph_card_tag = "[ AA ]" %}{% set ph_card_title = "Pensado para todas las personas" %}{% set ph_card_desc = "Teclado completo, foco visible, contraste 4.5:1 y movimiento reducido." %}{% set ph_title = "Accesibilidad" %}{% set ph_lead = "El CETPRO San Luis busca que este sitio sea utilizable por todas las personas, en cualquier dispositivo y con cualquier tecnología de asistencia." %}
+  {% include "page-hero.njk" %}
+  <div class="wrap">
 
   <h2>Objetivo</h2>
   <p>Este sitio cumple con <strong>WCAG 2.1 nivel AA</strong>. En términos prácticos:</p>
@@ -31,4 +32,5 @@ description: Declaración de accesibilidad del sitio del CETPRO San Luis — WCA
   <p>Reporta problemas de acceso a través de <a href="mailto:cetprosanluis@gmail.com">cetprosanluis@gmail.com</a> con el asunto «Accesibilidad».</p>
 
   <p class="card-caption">Última revisión: 2026-11-15 · Evaluación objetivo: axe DevTools (0 fallos críticos/serios) + Lighthouse Accesibilidad ≥ 90.</p>
+  </div>
 </article>
